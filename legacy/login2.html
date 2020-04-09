@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Placeholder Basic Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css" />
+    <style type="text/css">
+      body{
+      background:#f1f2f6;
+      }
+      h1{
+      text-align: center;
+      padding-top: 20px;
+      }
+      .main{
+      display: flex;
+      justify-content: center;
+      }
+
+      form{
+      width: 20%;
+      margin-top: 100px;
+      }
+      @media(max-width: 660px){
+      form{
+      width: 70%;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Basic Login Form</h1>
+    </header>
+    <div class="main">
+      <form action="action_page.php" method="post">
+        <div class="row">
+          <div class="twelve">
+            <input type="text" placeholder="Username*" class="u-full-width" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="twelve">
+            <input type="password" placeholder="Password*" class="u-full-width" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="twelve">
+            <input type="submit" name="" class="button-primary u-full-width" value="Login">
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
