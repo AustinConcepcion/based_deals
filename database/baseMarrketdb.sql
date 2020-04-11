@@ -10,6 +10,8 @@ create table account (
     name varchar(30),
     email varchar(30),
     password varchar(20),
+    address varchar(100),
+    creditInfo varchar(50),
     dateCreated timestamp,
     shopkeeper boolean,
     primary key (uid)
@@ -37,7 +39,9 @@ create table group (
 
 create table order (
     discount float(2,1) not null,
-    orderId int(8) not null,
+    orderId int(8) not null auto_increment,
+    uid int(8) not null,
+    pid int(8) not null,
     dateCreated timestamp,
     primary key (orderId),
     foreign key (uid),
