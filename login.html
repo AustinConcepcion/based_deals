@@ -5,7 +5,7 @@
     <!-- Basic Page Needs
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Login to Based Altar</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/landing.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Scripts
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -33,6 +33,35 @@
 
   </head>
   <body>
+
+    <!-- Begin NavBar -->
+    <script>
+    $(document).ready(function() {
+
+		    $(".fa-search").click(function() {
+		       $(".search-box").toggle();
+		       $("input[type='text']").focus();
+		     });
+
+ 		});
+    </script>
+
+    <div class="nav-bar">
+      <ul>
+        <li><a href="landing.html">based altar</a></li>
+        <li class="mob"><a href="product.html">products</a></li>
+        <li class="mob"><a href="grouppage.html">groups</a></li>
+        <li class="mob"><a href="login.html">login</a></li>
+        <li class="active">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <div class="search-box">
+            <input type="text" placeholder="Search . . ."/>
+            <input type="button" value="Search"/>
+          </div>
+        </li>
+      </ul>
+    </div>
+  <!-- End NavBar -->
 
       <!-- Primary Page Layout
       –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -51,8 +80,8 @@
                 </label>
               </form>
             </div>
-            <div class="one-half column wrap u-full-width">
-              <h1> BasedDeals Logo</h1>
+            <div class="one-half column u-full-width">
+              <img src="images/basedaltar.png" width="100%">
             </div>
           </div>
         </div>
