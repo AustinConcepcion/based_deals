@@ -149,9 +149,13 @@
 /* Hero
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .hero,
-.get-help,
-.get-register {
+.get-help {
   background-color: #E9E9E9;
+}
+
+.get-register {
+  background-color: #444;
+  color: #FFF;
 }
 
 .phones {
