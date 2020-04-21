@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.skeleton {
+/*
+define as separate properties
+*/
+--card-height: 340px;
+--card-padding:24px;
+--card-skeleton: linear-gradient(gray var(--card-height), transparent 0);
+
+--title-height: 32px;
+--title-width: 200px;
+--title-position: var(--card-padding) 180px;
+--title-skeleton: linear-gradient(white var(--title-height), transparent 0);
+
+--avatar-size: 32px;
+--avatar-position: var(--card-padding) var(--card-padding);
+--avatar-skeleton: radial-gradient(
+circle calc(var(--avatar-size) / 2),
+white 99%,
+transparent 0
+);
+
+/*
+now we can break the background up
+into individual shapes
+*/
+background-image:
+var(--avatar-skeleton),
+var(--title-skeleton),
+var(--card-skeleton);
+
+background-size:
+var(--avatar-size),
+var(--title-width) var(--title-height),
+100% 100%;
+
+background-position:
+var(--avatar-position),
+var(--title-position),
+0 0;
+}
+
+    /* The sidebar menu */
+    .sidenav {
+      height: 100%; /* Full-height: remove this if you want "auto" height */
+      width: 160px; /* Set the width of the sidebar */
+      position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+      z-index: 1; /* Stay on top */
+      top: 0; /* Stay at the top */
+      left: 0;
+      background-color: #111; /* Black */
+      overflow-x: hidden; /* Disable horizontal scroll */
+      padding-top: 20px;
+    }
+
+    /* The navigation menu links */
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    /* Style page content */
+    .main {
+      margin-left: 160px; /* Same as the width of the sidebar */
+      padding: 0px 10px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+    /*
+ * Variables
+ */
+
+</style>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Search results</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../../dist/images/favicon.png">
+  <body>
+
+      <!-- Begin NavBar -->
+      <script>
+      $(document).ready(function() {
+
+  		    $(".fa-search").click(function() {
+  		       $(".search-box").toggle();
+  		       $("input[type='text']").focus();
+  		     });
+
+   		});
+      </script>
+
+      <div class="nav-bar">
+        <ul>
+          <li><a href="landing.html">based altar</a></li>
+          <li class="mob"><a href="product.html">products</a></li>
+          <li class="mob"><a href="grouppage.html">groups</a></li>
+          <li class="mob"><a href="login.html">login</a></li>
+          <li class="active">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <div class="search-box">
+              <input type="text" placeholder="Search . . ."/>
+              <input type="button" value="Search"/>
+            </div>
+          </li>
+          <li class="mob"><a href="faq.html"><i class="fa fa-question"></i></a></li>
+        </ul>
+      </div>
+    <!-- End NavBar -->
+
+      <!-- Primary Page Layout
+      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+      <div class="sidenav">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#clients">Clients</a>
+          <a href="#contact">Contact</a>
+      </div>
+
+      <div class="section hero">
+        <div class="container">
+          <div class="row">
+            <div class="one-half column">
+                <div class="card">Black</div>
+            </div>
+            <div class="one-half column">
+                <div class="card">Black</div>
+            </div>
+            <div class="one-half column">
+                <div class="card">Black</div>
+            </div>
+            <div class="one-half column">
+                <button class="button-primary">Sort</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="section categories">
+        <div class="container">
+          <h3 class="section-heading">This is the bottom lol</h3>
+          <p class="section-description">Social Media buttons or some shit can go here?</p>
+          <div class="row">
+            <div class="one-half column category">
+              <img class="u-max-full-width" src="images/placeholder.png">
+            </div>
+            <div class="one-half column category">
+              <img class="u-max-full-width" src="images/placeholder.png">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    <!-- End Document
+      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      </body>
+    </html>
