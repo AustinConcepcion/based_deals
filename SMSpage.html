@@ -58,7 +58,7 @@
 		<div class="SearchBar">
 			<img src="images/basedaltar.png" alt="Based Altar" height="5%" width="10%" style="float:left;">
 			<input type="text" id="Search"  placeholder="Search: Enter Item Number or Item Name" name="Search" style=" border: 1px solid gray; width:50%;">
-			<button type="submit" onclick="searchFunc()" style="border: 1px solid grey;">
+			<button type="submit" class="button-primary u-nearfull-width" onclick="searchFunc()" style="border: 1px solid grey;">
 				<i class="fas fa-search"></i>
 			</button>
 		</div>
@@ -92,8 +92,8 @@
 			<input type="text" id="Category" placeholder="Category" style="width: 15%">
 			<input type="number" id="Percentage" min="0" max="100" placeholder="Discount %" style="width: 15%;">
 			</div>
-			<button id="addSave" type="add" onclick="tableAdd()">Save</button>
-			<button id="addCancel" type="add" onclick="cancelAdd()">Cancel</button>
+			<button id="addSave" class="button-primary u-nearfull-width" type="add" onclick="tableAdd()">Save</button>
+			<button id="addCancel" class="button-primary u-nearfull-width" type="add" onclick="cancelAdd()">Cancel</button>
 		</div>
 		
 		<!--When pressed, it will allow you to edit the discount policy, or add one if one hasn't been added-
@@ -324,8 +324,8 @@
 						else{
 							perCell.innerHTML = iPer;
 						}
-						delCell.innerHTML = '<button type="button" onclick="tableRemove()">Remove</button>';
-						ediCell.innerHTML = '<button type="button" onclick="editItem()">Edit</button>';
+						delCell.innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button>';
+						ediCell.innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button>';
 						onCount++;
 						continueAdd();
 						//resets each field to blank
@@ -356,9 +356,9 @@
 				newRow.innerHTML = tr.innerHTML;
 				
 				//changes remove button to a delete button for when they want to permanently remove item
-				newTable.rows[offCount].cells[5].innerHTML = '<button type="button" onclick="permRemove()">Delete</button>';
+				newTable.rows[offCount].cells[5].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="permRemove()">Delete</button>';
 				//Adds new button to return from inactive to active item
-				newTable.rows[offCount].cells[6].innerHTML = '<button type="button" onclick="reAdd()">Return</button>';
+				newTable.rows[offCount].cells[6].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="reAdd()">Return</button>';
 				offCount++;//adds to counter for items on inactive items list
 			}
 			
@@ -388,9 +388,9 @@
 				oldTable.rows[onCount].insertCell(5);
 				//changes delete button back to remove button, brings back edit button, and brings back cell for discount policy
 				oldTable.rows[onCount].cells[5].innerHTML = '0';
-				oldTable.rows[onCount].cells[6].innerHTML = '<button type="button" onclick="tableRemove()">Remove</button>';
+				oldTable.rows[onCount].cells[6].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button>';
 				//Removes newer button that return from inactive to active item
-				oldTable.rows[onCount].cells[7].innerHTML ='<button type="button" onclick="editItem()">Edit</button>';
+				oldTable.rows[onCount].cells[7].innerHTML ='<button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button>';
 				onCount++;//adds to counter for items on inactive items list
 			}
 			
@@ -412,8 +412,8 @@
 				table.rows[editRow].cells[3].innerHTML = '<input type="text" id="editPrice" placeholder="Price" value="'+editPric+'">';
 				table.rows[editRow].cells[4].innerHTML = '<input type="text" id="editCat" placeholder="Category" value="'+editCate+'">';
 				table.rows[editRow].cells[5].innerHTML = '<input type="number" id="editPer" placeholder="Category" value="'+editPerc+'">';
-				table.rows[editRow].cells[6].innerHTML = '<button id="editSave" type="add" onclick="saveEdit()">Save</button>';
-				table.rows[editRow].cells[7].innerHTML = '<button id="editCancel" type="add" onclick="cancelEdit()">Cancel</button>';
+				table.rows[editRow].cells[6].innerHTML = '<button id="editSave" class="button-primary u-nearfull-width" type="add" onclick="saveEdit()">Save</button>';
+				table.rows[editRow].cells[7].innerHTML = '<button id="editCancel" class="button-primary u-nearfull-width" type="add" onclick="cancelEdit()">Cancel</button>';
 			}
 			
 			function saveEdit(){
@@ -463,8 +463,8 @@
 						else{
 							table.rows[editRow].cells[5].innerHTML = iPer;
 						}
-						table.rows[editRow].cells[6].innerHTML = '<button type="button" onclick="tableRemove()">Remove</button>';
-						table.rows[editRow].cells[7].innerHTML = '<button type="button" onclick="editItem()">Edit</button>';
+						table.rows[editRow].cells[6].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button>';
+						table.rows[editRow].cells[7].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button>';
 						
 						alert("Edits have been saved!");
 					}
@@ -478,8 +478,8 @@
 				table.rows[editRow].cells[3].innerHTML = editPric;
 				table.rows[editRow].cells[4].innerHTML = editCate;
 				table.rows[editRow].cells[5].innerHTML = editPerc;
-				table.rows[editRow].cells[6].innerHTML = '<button type="button" onclick="tableRemove()">Remove</button>';
-				table.rows[editRow].cells[7].innerHTML = '<button type="button" onclick="editItem()">Edit</button>';
+				table.rows[editRow].cells[6].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button>';
+				table.rows[editRow].cells[7].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button>';
 			}			
 		</script>
 	</body>
