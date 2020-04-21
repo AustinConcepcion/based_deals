@@ -84,6 +84,7 @@
 		<!--appears when the add button is pressed-->
 		<!--Enter item information and saves it into a table-->
 		<div id="addInfo" style="display:none; padding: 40px;"> 
+			<p><b>Add Item</b></p>
 			<div style="float: left; border: 1px; width: 100%;">
 			<input type="text" id="ItemNo" placeholder="Item #" style="width: 8%">
 			<input type="text" id="ItemName" placeholder="Item Name" style="width: 20%">
@@ -224,12 +225,10 @@
 
 				var addInfo = document.getElementById("addInfo");
 				var addButton = document.getElementById("addButton");
-				var addItemTitle = document.getElementById("addItemTitle");
 				//var discButt1 = document.getElementById("discButt1");
 				//var policy = document.getElementById("Policy");
 				addInfo.style.display = "block";
 				addButton.style.display = "None";
-				addItemTitle.style.display = "inline";
 				
 				/*if (policy.style.display != "inline")//checks if the discount policy field is visible
 				{
