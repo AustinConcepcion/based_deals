@@ -58,7 +58,7 @@
 		<div class="SearchBar">
 			<img src="images/basedaltar.png" alt="Based Altar" height="5%" width="10%" style="float:left;">
 			<input type="text" id="Search"  placeholder="Search: Enter Item Number or Item Name" name="Search" style=" border: 1px solid gray; width:50%;">
-			<button type="submit" class="button-primary u-nearfull-width" onclick="searchFunc()" style="border: 1px solid grey;">
+			<button type="submit" class="button-primary" onclick="searchFunc()" style="border: 1px solid grey;">
 				<i class="fas fa-search"></i>
 			</button>
 		</div>
@@ -83,7 +83,7 @@
 		
 		<!--appears when the add button is pressed-->
 		<!--Enter item information and saves it into a table-->
-		<div id="addInfo" style="display:none; padding 10px"> 
+		<div id="addInfo" style="display:none; padding 50px"> 
 			<div style="float: left; border: 1px">
 			<input type="text" id="ItemNo" placeholder="Item #" style="width: 8%">
 			<input type="text" id="ItemName" placeholder="Item Name" style="width: 20%">
@@ -92,8 +92,8 @@
 			<input type="text" id="Category" placeholder="Category" style="width: 15%">
 			<input type="number" id="Percentage" min="0" max="100" placeholder="Discount %" style="width: 15%;">
 			</div>
-			<button id="addSave" class="button-primary u-nearfull-width" type="add" onclick="tableAdd()">Save</button>
-			<button id="addCancel" class="button-primary u-nearfull-width" type="add" onclick="cancelAdd()">Cancel</button>
+			<button id="addSave" class="button-primary" type="add" onclick="tableAdd()">Save</button>
+			<button id="addCancel" class="button-primary" type="add" onclick="cancelAdd()">Cancel</button>
 		</div>
 		
 		<!--When pressed, it will allow you to edit the discount policy, or add one if one hasn't been added-
@@ -104,6 +104,7 @@
 		</div>-->
 		
 		<h2>Items on the Market</h2>
+		
 		<table id="itemOnTable" class="u-full-width">
 			<thead>
 				<tr>
