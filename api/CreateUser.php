@@ -2,6 +2,7 @@
 
 include './includes/db.inc.php';
 $error = 'none';
+echo 'test<br>';
 
 try {
     // get json data
