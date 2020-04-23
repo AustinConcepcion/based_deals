@@ -41,7 +41,34 @@ create table product_order (
 create table discount_group (
     orderId int(8) not null,
     uid int(8) not null,
+    isActive boolean not null default 1,
+    dateCreated timestamp,
     primary key (orderId, uid),
     foreign key (orderId) references product_order(orderId),
     foreign key (uid) references user_account(uid)
 );
+
+DELIMITER $$    
+DROP EVENT IF EXISTS close_expired_groups $$
+CREATE EVENT close_expired_groups
+	ON SCHEDULE EVERY 1 DAY
+	STARTS (CURDATE() + INTERVAL 0 SECOND + INTERVAL 1 DAY)
+    ON COMPLETION PRESERVE DO
+    BEGIN
+		UPDATE discount_group g
+        INNER JOIN product_order o
+        ON g.orderId = o.orderId
+			SET g.isActive = 0,
+				o.discount = CASE 
+					WHEN (SELECT COUNT(*) AS group_members
+						FROM discount_group d
+						WHERE d.orderId = o.orderId
+						) < 5 
+						THEN 0
+					WHEN group_members >= 5 AND group_members < 10
+						THEN 5
+					WHEN group_members >= 10
+						THEN 10
+				END
+        WHERE o.dateCreated <= (CURDATE() + INTERVAL 0 SECOND - INTERVAL 7 DAY);
+	END $$
