@@ -245,6 +245,9 @@ div.product-thumbs {
   .hero-heading {
     font-size: 2.4rem;
   }
+  .shopkeeper {
+    float: left;
+    margin-top: 12px; }
 }
 
 /* Bigger than 750 */
