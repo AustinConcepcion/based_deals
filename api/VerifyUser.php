@@ -7,7 +7,8 @@ $jsonres = '';
 try {
     // get json data
     $data = json_decode(file_get_contents('php://input'));
-    $pid = $data->pid;
+    $email = $data->email;
+    $password = $data->password;
 
     //verify data
     if (empty($pid)) {
@@ -18,10 +19,10 @@ try {
     }
 
     // create sql querie
-    $sql = 'SELECT * FROM user_account WHERE uid = ?';
+    $sql = 'SELECT * FROM user_account WHERE email = ?';
     $stmt = mysqli_stmt_init($conn);
     if (mysqli_stmt_prepare($stmt, $sql)) {
-        mysqli_stmt_bind_param($stmt, 'i', $pid);
+        mysqli_stmt_bind_param($stmt, 's', $email);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
         $resultCheck = mysqli_stmt_num_rows($stmt);

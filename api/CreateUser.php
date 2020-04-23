@@ -6,8 +6,13 @@ $error = 'none';
 try {
     // get json data
     $data = json_decode(file_get_contents('php://input'));
+    $username = $data->username;
+    $name = $data->name;
+    $address = $data->address;
     $email = $data->email;
     $password = $data->password;
+    $creditinfo = $data->creditinfo;
+    $shopkeeper = $data->shopkeeper;
 
     //verify data
     if (empty($username) || empty($name) || empty($email) || empty($password) || empty($address) || empty($creditinfo) || empty($shopkeeper)) {
