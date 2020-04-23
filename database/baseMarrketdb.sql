@@ -55,6 +55,9 @@ CREATE EVENT close_expired_groups
 	STARTS (CURDATE() + INTERVAL 0 SECOND + INTERVAL 1 DAY)
     ON COMPLETION PRESERVE DO
     BEGIN
-		UPDATE discount_group SET isActive = 0
-        WHERE dateCreated <= (CURDATE() + INTERVAL 0 SECOND - INTERVAL 7 DAY);
+		UPDATE discount_group g
+        INNER JOIN product_order o
+        ON g.orderId = o.orderId
+			SET g.isActive = 0
+        WHERE o.dateCreated <= (CURDATE() + INTERVAL 0 SECOND - INTERVAL 7 DAY);
 	END $$
