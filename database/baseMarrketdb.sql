@@ -5,7 +5,7 @@ create database basedDealsdb;
 use basedDealsdb;
 
 create table user_account (
-    username varchar(30) not null,
+    username varchar(30) not null unique,
     uid int(8) not null auto_increment,
     name varchar(30),
     email varchar(30),
