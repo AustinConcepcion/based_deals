@@ -38,5 +38,5 @@ try {
     $error = $e->getMessage();
 } finally {
     echo '{ "error": "'.$error.'" }';
-    header('Location: ../login.html?error='.$error);
+    //header('Location: ../login.html?error='.$error);
 }
