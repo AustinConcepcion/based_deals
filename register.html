@@ -44,6 +44,58 @@
 		     });
 
  		});
+     
+      function register()
+      {
+        let username = document.getElementById("input-name").value;
+        let email = document.getElementById("input-email").value;
+        let password = document.getElementById("input-password").value;
+        let rpassword = document.getElementById("input-rpassword").value;
+        let shopkeeper = document.getElementById("input-shopkeeper").value;
+
+        if(password != rpassword)
+        {
+          alert("Password and Repeat Password are not the same!!");
+          document.getElementById("input-password").value = "";
+          document.getElementById("input-rpassword").value = "";
+          return;
+        }
+
+        var npassword = username + password;
+
+        var SHA512 = new Hashes.SHA512;
+
+        npassword = SHA512.hex(npassword);
+
+        var jsonPayload = '{"username" : "' + username + '", "email" : "' + email + '", "password" : "' + password + '", "shopkeeper" : "' + shopkeeper + '"}';
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "./api/CreateUser.php", true,);
+        xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+        try
+        {
+        
+          xhr.onreadystatechange = function()
+          {
+            if(this.readyState == 4 && this.status == 200)
+            {
+              console.log(xhr.responseText);
+              var jsonResponse = JSON.parse(xhr.responseText);
+              console.log(jsonResponse);
+              if(jsonResponse.error == "")
+                window.location = "login.html";
+              else
+                alert(jsonResponse.error);
+            }
+          }
+          xhr.send(jsonPayload);
+        }
+        catch(err)
+        {
+          alert("Invalid Connection!!");
+        }
+      }
     </script>
 
     <div class="nav-bar">
@@ -74,20 +126,20 @@
           <div class="row">
             <div class="one-half column">
               <h4 class="hero-heading">Register</h4>
-              <form action="php/register.php" method="post">
+              <form action="" method="post">
                 <h6 class="value-heading">Name</h6>
-                <input type="text" placeholder="April Ludgate" class="u-nearfull-width" required>
+                <input id="input-name" type="text" placeholder="April Ludgate" class="u-nearfull-width" required>
                 <h6 class="value-heading">Email</h6>
-                <input type="email" placeholder="bloodorphan@p&r.gov" class="u-nearfull-width" required>
+                <input id="input-email" type="email" placeholder="bloodorphan@p&r.gov" class="u-nearfull-width" required>
                 <h6 class="value-heading">Password</h6>
-                <input type="password" placeholder="At least 8 characters" class="u-nearfull-width" required>
+                <input id="input-password" type="password" placeholder="At least 8 characters" class="u-nearfull-width" required>
                 <h6 class="value-heading">Re-enter password</h6>
-                <input type="password" placeholder="Must match above" class="u-nearfull-width" required>
+                <input id="input-rpassword" type="password" placeholder="Must match above" class="u-nearfull-width" required>
                 <label class="shopkeeper">
-                  <input type="checkbox">
+                  <input id="input-shopkeeper" type="checkbox">
                   <span class="label-body">Are you a shopkeeper?</span>
                 </label>
-                <input type="submit" name="" class="button-primary u-nearfull-width" value="Create your account">
+                <input onclick="register()" type="submit" name="" class="button-primary u-nearfull-width" value="Create your account">
 
               </form>
             </div>
