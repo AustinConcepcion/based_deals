@@ -123,41 +123,33 @@
 		<table align="center" id="itemOnTable" class="u-nearfull-width">
 			<thead>
 				<tr>
-					<th>#</th>
 					<th>Item Name</th>
 					<th width="50%">Description</th>
 					<th>Price</th>
 					<th>Category</th>
-					<th>Discount Pol.</th>
 				</tr>
 			</thead>
 			<tr>
-				<td>0000001</td>
 				<td>Yankee Candle Large Jar Candle Midsummer's Night</td>
 				<td>Smells good, but don't eat it</td>
 				<td>20.99</td>
 				<td>Houseware</td>
-				<td>0</td>
 				<td><button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button></td>
 				<td><button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button></td>
 			</tr>
 			<tr>
-				<td>0000002</td>
 				<td>Bath & Body Works, Aromatherapy Stress Relief 3-Wick Candle, Eucalyptus Spearmint</td>
 				<td>Smells good, but don't eat it</td>
 				<td>30.47</td>
 				<td>Houseware</td>
-				<td>0</td>
 				<td><button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button></td>
 				<td><button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button></td>
 			</tr>
 			<tr>
-				<td>0000003</td>
 				<td>Bath & Body Works White Barn 3-Wick Candle in Mahogany Teakwood High Intensity</td>
 				<td>Smells good, but don't eat it</td>
 				<td>34.79</td>
 				<td>Houseware</td>
-				<td>0</td>
 				<td><button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button></td>
 				<td><button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button></td>
 			</tr>
@@ -168,7 +160,6 @@
 		<table align="center" id="itemOffTable" class="u-nearfull-width">
 			<thead>
 				<tr>
-					<th>#</th>
 					<th>Item Name</th>
 					<th width="50%">Description</th>
 					<th>Price</th>
@@ -184,8 +175,8 @@
 			var onCount = 4; //counts rows in the active items table
 			var offCount = 1; //counts rows in the inactive items table
 			//var discountPerc = 0;
-			var editRow = 1;
-			var editNum, editNam, editDes, editPric, editCate, editPerc;
+			var editRow = onCount;
+			var editNam, editDes, editPric, editCate;
 
 
 			function searchFunc(){
@@ -202,9 +193,10 @@
 					}
 					else {
 						for (var i = 1; i<table.rows.length;i++){ //checks each row to find the item. If item isn't found, it will give alert
-							if (searchVal === table.rows[i].cells[0].innerHTML || searchVal === table.rows[i].cells[0].innerHTML ){
-								alert("Item Number: "+table.rows[i].cells[0].innerHTML+"\nItem Name: "+table.rows[i].cells[1].innerHTML+
-									"\nDescription: "+table.rows[i].cells[2].innerHTML+ "\nPrice: $"+table.rows[i].cells[3].innerHTML+ "\nCategory: "+table.rows[i].cells[4].innerHTML);
+							if (searchVal === table.rows[i].cells[0].innerHTML ){
+								alert("Item Name: "+table.rows[i].cells[0].innerHTML+
+									"\nDescription: "+table.rows[i].cells[1].innerHTML+ "\nPrice: $"+table.rows[i].cells[2].innerHTML+ "\nCategory: "
+								      +table.rows[i].cells[3].innerHTML);
 								found = true;
 							}
 						}
@@ -302,13 +294,11 @@
 				addButton.style.display = "block";
 				addItemTitle.style.display = "none";
 				//discButt1.style.display = "none";
-				document.getElementById("ItemNo").value = "";
 				document.getElementById("ItemName").value = "";
 				document.getElementById("Description").value = "";
 				document.getElementById("Price").value = "";
 				document.getElementById("Description").value = "";
 				document.getElementById("Category").value = "";
-				document.getElementById("Percentage").value = "";
 				/*if (policy.style.display==="none") //checks if the discount policy field is visible
 				{
 					discButt2.style.display="inline";//if it's not, show the discount policy button
@@ -321,69 +311,39 @@
 				var iDesc = document.getElementById("Description").value;
 				var iPrice = document.getElementById("Price").value;
 				var iCat = document.getElementById("Category").value;
-				var iNo = document.getElementById("ItemNo").value;
-				var iPer = document.getElementById("Percentage").value;
 				var table = document.getElementById("itemOnTable");
 				var offTable = document.getElementById("itemOffTable");
 
 
 
-				if (iName === ''||iDesc === ''||iPrice === '' || iCat === '' || iNo === '') {//makes sure user doesn't leave anything blank
+				if (iName === ''||iDesc === ''||iPrice === '' || iCat === '') {//makes sure user doesn't leave anything blank
 					alert("Please fill in all blanks (percentage field is optional)");
 				}
 				else{
 					var tF = false
 
-					if (iPer!='' && (iPer<0||iPer>100)){
-						alert("number must be a between 0 and 100");
-						tF=true;
-					}
-					for (var i = 1; i<document.getElementById("itemOnTable").rows.length;i++){//makes sure no active item has the same item number as the item being added
-						if (iNo === table.rows[i].cells[0].innerHTML)
-						{
-							alert("You cannot have two items with the same item number!");
-							tF = true;
-						}
-					}
 
-					for (var i = 1; i<document.getElementById("itemOffTable").rows.length;i++){//makes sure no inactive item has the same item number as the item being added
-						if (iNo === offTable.rows[i].cells[0].innerHTML){
-							alert("You cannot have two items with the same item number!");
-							tF = true;
-						}
-					}
 					if (tF===false){//adds data from each field into the table
 						var row = table.insertRow(onCount);
-						var numCell = row.insertCell(0);
-						var namCell = row.insertCell(1);
-						var desCell = row.insertCell(2);
-						var priCell = row.insertCell(3);
-						var catCell = row.insertCell(4);
-						var perCell = row.insertCell(5);
-						var delCell = row.insertCell(6);
-						var ediCell = row.insertCell(7);
-						numCell.innerHTML = iNo;
+						var namCell = row.insertCell(0);
+						var desCell = row.insertCell(1);
+						var priCell = row.insertCell(2);
+						var catCell = row.insertCell(3);
+						var delCell = row.insertCell(4);
+						var ediCell = row.insertCell(5);
 						namCell.innerHTML = iName;
 						desCell.innerHTML = iDesc;
 						priCell.innerHTML = iPrice;
 						catCell.innerHTML = iCat;
-						if (iPer===''){
-							perCell.innerHTML = '0';
-						}
-						else{
-							perCell.innerHTML = iPer;
-						}
 						delCell.innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button>';
 						ediCell.innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button>';
 						onCount++;
 						continueAdd();
 						//resets each field to blank
-						document.getElementById("ItemNo").value = "";
 						document.getElementById("ItemName").value = "";
 						document.getElementById("Description").value = "";
 						document.getElementById("Price").value = "";
 						document.getElementById("Category").value = "";
-						document.getElementById("Percentage").value = "";
 					}
 				}
 
@@ -405,9 +365,9 @@
 				newRow.innerHTML = tr.innerHTML;
 
 				//changes remove button to a delete button for when they want to permanently remove item
-				newTable.rows[offCount].cells[5].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="permRemove()">Delete</button>';
+				newTable.rows[offCount].cells[3].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="permRemove()">Delete</button>';
 				//Adds new button to return from inactive to active item
-				newTable.rows[offCount].cells[6].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="reAdd()">Return</button>';
+				newTable.rows[offCount].cells[4].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="reAdd()">Return</button>';
 				offCount++;//adds to counter for items on inactive items list
 			}
 
@@ -434,12 +394,12 @@
 				//adds inactive item back to active item table
 				newRow = oldTable.insertRow(onCount);
 				newRow.innerHTML = tr.innerHTML;
-				oldTable.rows[onCount].insertCell(5);
+				oldTable.rows[onCount].insertCell(3);
 				//changes delete button back to remove button, brings back edit button, and brings back cell for discount policy
-				oldTable.rows[onCount].cells[5].innerHTML = '0';
-				oldTable.rows[onCount].cells[6].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button>';
+				oldTable.rows[onCount].cells[3].innerHTML = '0';
+				oldTable.rows[onCount].cells[4].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button>';
 				//Removes newer button that return from inactive to active item
-				oldTable.rows[onCount].cells[7].innerHTML ='<button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button>';
+				oldTable.rows[onCount].cells[5].innerHTML ='<button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button>';
 				onCount++;//adds to counter for items on inactive items list
 			}
 
@@ -448,72 +408,40 @@
 				var td = event.target.parentNode;
 				var tr = td.parentNode;
 				editRow = tr.rowIndex;
-				editNum = table.rows[editRow].cells[0].innerHTML;
-				editNam = table.rows[editRow].cells[1].innerHTML;
-				editDes = table.rows[editRow].cells[2].innerHTML;
-				editPric = table.rows[editRow].cells[3].innerHTML;
-				editCate = table.rows[editRow].cells[4].innerHTML;
-				editPerc = table.rows[editRow].cells[5].innerHTML;
+				editNam = table.rows[editRow].cells[0].innerHTML;
+				editDes = table.rows[editRow].cells[1].innerHTML;
+				editPric = table.rows[editRow].cells[2].innerHTML;
+				editCate = table.rows[editRow].cells[3].innerHTML;
 
-				table.rows[editRow].cells[0].innerHTML = '<input type="text" id="editNo" placeholder="Item #" value="'+editNum+'">';
-				table.rows[editRow].cells[1].innerHTML = '<input type="text" id="editName" placeholder="Item Name" value="'+editNam+'">';
-				table.rows[editRow].cells[2].innerHTML = '<input type="text" id="editDesc" placeholder="Description" value="'+editDes+'">';
-				table.rows[editRow].cells[3].innerHTML = '<input type="text" id="editPrice" placeholder="Price" value="'+editPric+'">';
-				table.rows[editRow].cells[4].innerHTML = '<input type="text" id="editCat" placeholder="Category" value="'+editCate+'">';
-				table.rows[editRow].cells[5].innerHTML = '<input type="number" id="editPer" placeholder="Category" value="'+editPerc+'">';
-				table.rows[editRow].cells[6].innerHTML = '<button id="editSave" class="button-primary u-nearfull-width" type="add" onclick="saveEdit()">Save</button>';
-				table.rows[editRow].cells[7].innerHTML = '<button id="editCancel" class="button-primary u-nearfull-width" type="add" onclick="cancelEdit()">Cancel</button>';
+				table.rows[editRow].cells[0].innerHTML = '<input type="text" id="editName" placeholder="Item Name" value="'+editNam+'">';
+				table.rows[editRow].cells[1].innerHTML = '<input type="text" id="editDesc" placeholder="Description" value="'+editDes+'">';
+				table.rows[editRow].cells[2].innerHTML = '<input type="text" id="editPrice" placeholder="Price" value="'+editPric+'">';
+				table.rows[editRow].cells[3].innerHTML = '<input type="text" id="editCat" placeholder="Category" value="'+editCate+'">';
+				table.rows[editRow].cells[4].innerHTML = '<button id="editSave" class="button-primary u-nearfull-width" type="add" onclick="saveEdit()">Save</button>';
+				table.rows[editRow].cells[5].innerHTML = '<button id="editCancel" class="button-primary u-nearfull-width" type="add" onclick="cancelEdit()">Cancel</button>';
 			}
 
 			function saveEdit(){
 				var table = document.getElementById("itemOnTable");
 				var offTable = document.getElementById("itemOffTable");
-				var iNo = document.getElementById("editNo").value;
 				var iName = document.getElementById("editName").value;
 				var iDesc = document.getElementById("editDesc").value;
 				var iPrice = document.getElementById("editPrice").value;
 				var iCat = document.getElementById("editCat").value;
-				var iPer = document.getElementById("editPer").value;
 
 
-				if (iName === ''||iDesc === ''||iPrice === '' || iCat === '' || iNo === '') {//makes sure user doesn't leave anything blank
+				if (iName === ''||iDesc === ''||iPrice === '' || iCat === '') {//makes sure user doesn't leave anything blank
 					alert("Please fill in all blanks!");
 				}
 				else{
 					var tF = false
-
-					if (iPer!='' && (iPer<0||iPer>100)){
-						alert("number must be a between 0 and 100");
-						tF=true;
-					}
-
-					for (var i = 1; i<document.getElementById("itemOnTable").rows.length;i++){//makes sure no active item has the same item number as the item being added
-						if (iNo === table.rows[i].cells[0].innerHTML && i!= editRow){
-							alert("You cannot have two items with the same item number!");
-							tF = true;
-						}
-					}
-
-					for (var i = 1; i<document.getElementById("itemOffTable").rows.length;i++){//makes sure no inactive item has the same item number as the item being added
-						if (iNo === offTable.rows[i].cells[0].innerHTML){
-							alert("You cannot have two items with the same item number!");
-							tF = true;
-						}
-					}
 					if (tF===false){//adds data from each field into the table
-						table.rows[editRow].cells[0].innerHTML = iNo;
-						table.rows[editRow].cells[1].innerHTML = iName;
-						table.rows[editRow].cells[2].innerHTML = iDesc;
-						table.rows[editRow].cells[3].innerHTML = iPrice;
-						table.rows[editRow].cells[4].innerHTML = iCat;
-						if (iPer===''){
-							table.rows[editRow].cells[5].innerHTML = '0';
-						}
-						else{
-							table.rows[editRow].cells[5].innerHTML = iPer;
-						}
-						table.rows[editRow].cells[6].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button>';
-						table.rows[editRow].cells[7].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button>';
+						table.rows[editRow].cells[0].innerHTML = iName;
+						table.rows[editRow].cells[1].innerHTML = iDesc;
+						table.rows[editRow].cells[2].innerHTML = iPrice;
+						table.rows[editRow].cells[3].innerHTML = iCat;
+						table.rows[editRow].cells[4].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button>';
+						table.rows[editRow].cells[5].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button>';
 
 						alert("Edits have been saved!");
 					}
@@ -521,14 +449,12 @@
 			}
 			function cancelEdit(){
 				var table = document.getElementById("itemOnTable");
-				table.rows[editRow].cells[0].innerHTML = editNum;
-				table.rows[editRow].cells[1].innerHTML = editNam;
-				table.rows[editRow].cells[2].innerHTML = editDes;
-				table.rows[editRow].cells[3].innerHTML = editPric;
-				table.rows[editRow].cells[4].innerHTML = editCate;
-				table.rows[editRow].cells[5].innerHTML = editPerc;
-				table.rows[editRow].cells[6].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button>';
-				table.rows[editRow].cells[7].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button>';
+				table.rows[editRow].cells[0].innerHTML = editNam;
+				table.rows[editRow].cells[1].innerHTML = editDes;
+				table.rows[editRow].cells[2].innerHTML = editPric;
+				table.rows[editRow].cells[3].innerHTML = editCate;
+				table.rows[editRow].cells[4].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="tableRemove()">Remove</button>';
+				table.rows[editRow].cells[5].innerHTML = '<button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button>';
 			}
 		</script>
 	</body>
