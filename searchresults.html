@@ -2,92 +2,6 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-
-.skeleton {
-/*
-define as separate properties
-*/
---card-height: 340px;
---card-padding:24px;
---card-skeleton: linear-gradient(gray var(--card-height), transparent 0);
-
---title-height: 32px;
---title-width: 200px;
---title-position: var(--card-padding) 180px;
---title-skeleton: linear-gradient(white var(--title-height), transparent 0);
-
---avatar-size: 32px;
---avatar-position: var(--card-padding) var(--card-padding);
---avatar-skeleton: radial-gradient(
-circle calc(var(--avatar-size) / 2),
-white 99%,
-transparent 0
-);
-
-/*
-now we can break the background up
-into individual shapes
-*/
-background-image:
-var(--avatar-skeleton),
-var(--title-skeleton),
-var(--card-skeleton);
-
-background-size:
-var(--avatar-size),
-var(--title-width) var(--title-height),
-100% 100%;
-
-background-position:
-var(--avatar-position),
-var(--title-position),
-0 0;
-}
-
-    /* The sidebar menu */
-    .sidenav {
-      height: 100%; /* Full-height: remove this if you want "auto" height */
-      width: 160px; /* Set the width of the sidebar */
-      position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-      z-index: 1; /* Stay on top */
-      top: 0; /* Stay at the top */
-      left: 0;
-      background-color: #111; /* Black */
-      overflow-x: hidden; /* Disable horizontal scroll */
-      padding-top: 20px;
-    }
-
-    /* The navigation menu links */
-    .sidenav a {
-      padding: 6px 8px 6px 16px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-    }
-
-    /* When you mouse over the navigation links, change their color */
-    .sidenav a:hover {
-      color: #f1f1f1;
-    }
-
-    /* Style page content */
-    .main {
-      margin-left: 160px; /* Same as the width of the sidebar */
-      padding: 0px 10px;
-    }
-
-    /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-    @media screen and (max-height: 450px) {
-      .sidenav {padding-top: 15px;}
-      .sidenav a {font-size: 18px;}
-    }
-    /*
- * Variables
- */
-
-</style>
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -154,13 +68,6 @@ var(--title-position),
       <!-- Primary Page Layout
       –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-      <!-- <div class="sidenav">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#clients">Clients</a>
-          <a href="#contact">Contact</a>
-      </div> -->
-
       <div class="section hero">
         <div class="container">
           <div class="row">
@@ -175,34 +82,22 @@ var(--title-position),
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Yankee Candle Large Jar Candle Midsummer's Night</td>
-                    <td>https://www.amazon.com/Yankee-Candle-Large-Midsummers-Night/dp/B000ORX6WI?ref_=s9_apbd_otopr_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=da763f1a-9ede-52e6-96df-4cedd103038c&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</td>
+                    <td><a href="https://www.amazon.com/Yankee-Candle-Large-Midsummers-Night/dp/B000ORX6WI?ref_=s9_apbd_otopr_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=da763f1a-9ede-52e6-96df-4cedd103038c&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">Yankee Candle Large Jar Candle Midsummer's Night</a></td>
+                    <td>45823448 <a href="https://www.amazon.com/Yankee-Candle-Large-Midsummers-Night/dp/B000ORX6WI?ref_=s9_apbd_otopr_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=da763f1a-9ede-52e6-96df-4cedd103038c&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">https://www.amazon.com/Yankee-Candle-Large-Midsummers-Night/dp/B000ORX6WI?ref_=s9_apbd_otopr_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=da763f1a-9ede-52e6-96df-4cedd103038c&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</a></td>
                     <td>Houseware</td>
                     <td>$20.99</td>
                   </tr>
                   <tr>
-                    <td>Bath & Body Works, Aromatherapy Stress Relief 3-Wick Candle, Eucalyptus Spearmint</td>
-                    <td>https://www.amazon.com/Bath-Body-Works-Aromatherapy-Eucalyptus/dp/B005O91CUE?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</td>
+                    <td><a href="https://www.amazon.com/Bath-Body-Works-Aromatherapy-Eucalyptus/dp/B005O91CUE?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">Bath & Body Works, Aromatherapy Stress Relief 3-Wick Candle, Eucalyptus Spearmint</a></td>
+                    <td>36789452 <a href="https://www.amazon.com/Bath-Body-Works-Aromatherapy-Eucalyptus/dp/B005O91CUE?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">https://www.amazon.com/Bath-Body-Works-Aromatherapy-Eucalyptus/dp/B005O91CUE?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</a></td>
                     <td>Houseware</td>
                     <td>$30.47</td>
                   </tr>
                   <tr>
-                    <td>Bath & Body Works White Barn 3-Wick Candle in Mahogany Teakwood High Intensity</td>
-                    <td>https://www.amazon.com/Bath-Body-Works-Mahogany-Intensity/dp/B01M7TTA2S?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</td>
+                    <td><a href="https://www.amazon.com/Bath-Body-Works-Mahogany-Intensity/dp/B01M7TTA2S?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">Bath & Body Works White Barn 3-Wick Candle in Mahogany Teakwood High Intensity</a></td>
+                    <td>63214786 <a href="https://www.amazon.com/Bath-Body-Works-Mahogany-Intensity/dp/B01M7TTA2S?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">https://www.amazon.com/Bath-Body-Works-Mahogany-Intensity/dp/B01M7TTA2S?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</a></td>
                     <td>Houseware</td>
                     <td>$33.79</td>
-                  </tr>
-                  <tr>
-                    <td>Yankee Candle Large Jar Candle Midsummer's Night</td>
-                    <td>https://www.amazon.com/Yankee-Candle-Large-Midsummers-Night/dp/B000ORX6WI?ref_=s9_apbd_otopr_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=da763f1a-9ede-52e6-96df-4cedd103038c&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</td>
-                    <td>Houseware</td>
-                    <td>$20.99</td>
-                  </tr>
-                  <tr>
-                    <td>Yankee Candle Large Jar Candle Midsummer's Night</td>
-                    <td>https://www.amazon.com/Yankee-Candle-Large-Midsummers-Night/dp/B000ORX6WI?ref_=s9_apbd_otopr_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=da763f1a-9ede-52e6-96df-4cedd103038c&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</td>
-                    <td>Houseware</td>
-                    <td>$20.99</td>
                   </tr>
                 </tbody>
               </table>
@@ -210,9 +105,9 @@ var(--title-position),
         </div>
       </div>
 
+      <div class="section hero"></div>
 
-
-      <!-- <div class="section categories">
+      <div class="section categories">
         <div class="container">
           <h3 class="section-heading">This is the bottom lol</h3>
           <p class="section-description">Social Media buttons or some shit can go here?</p>
@@ -225,7 +120,7 @@ var(--title-position),
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
 
 
 
