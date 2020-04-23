@@ -12,18 +12,20 @@ create table user_account (
     password varchar(20),
     address varchar(100),
     creditInfo varchar(50),
-    dateCreated timestamp,
+    dateCreated timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     shopkeeper boolean,
     primary key (uid)
 );
 
+
+
 create table product (
-    productname varchar(30),
+    productname varchar(256),
     price float(7,2),
     productPic varchar(256),
     description varchar(512),
-    pid int(8) not null auto_increment,
     category varchar(30),
+    pid int(8) not null auto_increment,
     primary key (pid)
 );
 
@@ -32,7 +34,7 @@ create table product_order (
     orderId int(8) not null auto_increment,
     uid int(8) not null,
     pid int(8) not null,
-    dateCreated timestamp,
+    dateCreated timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     primary key (orderId),
     foreign key (uid) references user_account(uid),
     foreign key(pid) references product(pid)
@@ -47,6 +49,21 @@ create table discount_group (
     foreign key (orderId) references product_order(orderId),
     foreign key (uid) references user_account(uid)
 );
+
+insert into product_order (productname, price, productPic, description, category) values("Yankee Candle Large Jar Candle Midsummer's Night", 20.99,
+"https://images-na.ssl-images-amazon.com/images/I/81idxwhmJzL._AC_SY450_.jpg",
+"Smells good yummy but do not eat it facts", "houseware");
+
+insert into product_order (productname, price, productPic, description, category) values("Bath & Body Works, Aromatherapy Stress Relief 3-Wick Candle, Eucalyptus Spearmint", 30.47,
+"https://images-na.ssl-images-amazon.com/images/I/61ALTSt9nZL._AC_SL1500_.jpg",
+"Smells good yummy but do not eat it facts", "houseware");
+
+insert into product_order (productname, price, productPic, description, category) values("Bath & Body Works White Barn 3-Wick Candle in Mahogany Teakwood High Intensity", 33.79,
+"https://images-na.ssl-images-amazon.com/images/I/61cgxCeqCML._AC_SL1500_.jpg",
+"Smells good yummy but do not eat it facts", "houseware");
+
+insert into user_account (username, name, email, password) values ("test", "test", "test@test.com", "password");
+
 
 DELIMITER $$    
 DROP EVENT IF EXISTS close_expired_groups $$
