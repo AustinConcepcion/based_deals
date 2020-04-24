@@ -26,18 +26,27 @@ try {
         mysqli_stmt_bind_param($stmt, 's', $email);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
-        printf('%d Row inserted.<br>', mysqli_stmt_num_rows($stmt));
+        printf('%d Row selected.<br>', mysqli_stmt_num_rows($stmt));
         if (mysqli_stmt_num_rows($stmt) < 1) {
             throw new Exception('username_not_exist');
         }
         $result = mysqli_stmt_get_result($stmt);
         $dpassword = '';
         $uid = 0;
+        //while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+        //    echo var_dump($row);
+        //    $dpassword = $row['password'];
+        //    $uid = $row['uid'];
+        //}
+
+        //$result = mysqli_stmt_get_result($stmt);
         while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
-            echo var_dump($row);
-            $dpassword = $row['password'];
-            $uid = $row['uid'];
+            foreach ($row as $r) {
+                echo "{$r} ";
+            }
+            echo "\n";
         }
+
         echo "dpassword:{$dpassword} <br> uid:{$uid} <br>";
         if (!password_verify($password, $dpassword)) {
             throw new Exception('invalid_username_or_password');
