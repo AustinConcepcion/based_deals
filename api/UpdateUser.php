@@ -61,10 +61,10 @@ try {
 } finally {
     echo '{"error":'.$error.'}';
     if ('none' != $error) {
-        header('Location: ../CCinfo.php.php?error='.$error);
+        header('Location: ../CCinfo.php.php?pid='.$pid.'&error='.$error);
         exit;
     }
 
-    header('Location: ../grouppage.php?orderid='.$orderid);
+    header('Location: ../grouppage.php?orderid='.$orderid.'&pid='.$pid);
     exit;
 }

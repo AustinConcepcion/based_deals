@@ -79,7 +79,32 @@
         <div class="container">
           <div class="row">
             <div class="one-half column product-image">
-              <img class="u-max-full-width" src="images/placeholder.png">
+              <img class="u-max-full-width" src="
+              <?php
+                include './api/includes/db.inc.php';
+                $image = 'images/placeholder.png';
+                $productname = '';
+                $price = 0.0;
+                $description = '';
+                $sql = 'SELECT * FROM product WHERE pid = ?';
+                $stmt = mysqli_stmt_init($conn);
+                if (mysqli_stmt_prepare($stmt, $sql)) {
+                    $pid = htmlspecialchars($_GET['pid'], ENT_QUOTES);
+                    mysqli_stmt_bind_param($stmt, 'i', $pid);
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+                    while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+                        //echo var_dump($row).'<br>';
+                        if (1 == $row[6]) {
+                            $productname = $row[0];
+                            $price = $row[1];
+                            $description = $row[3];
+                            $image = $row[2];
+                        }
+                    }
+                    echo $image;
+                }
+              ?>">
 
             </div>
             <div class="one-half column">
@@ -92,8 +117,28 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Product Title</td>
-                      <td>Number of group members<!--use sql calls on orderform.html--></td>
+                      <td>
+                        <?php
+                          echo $productname;
+                        ?>
+                        </td>
+                      <td>Number of group members:
+                        <?php
+                          $sql = 'SELECT COUNT(*) FROM discount_group d, product_order o WHERE d.orderId = ?';
+                          if (mysqli_stmt_prepare($stmt, $sql)) {
+                              $orderid = htmlspecialchars($_GET['orderid'], ENT_QUOTES);
+                              mysqli_stmt_bind_param($stmt, 'i', $orderid);
+                              mysqli_stmt_execute($stmt);
+                              $result = mysqli_stmt_get_result($stmt);
+                              $count = 0;
+                              while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+                                  //echo var_dump($row).'<br>';
+                                  $count = $row[0];
+                              }
+                              echo ' '.$count;
+                          }
+                        ?>
+                        </td>
                     </tr>
                   </tbody>
                   <thead>
