@@ -33,7 +33,8 @@ include './includes/db.inc.php';
     if (mysqli_stmt_prepare($stmt, $sql)) {
         mysqli_stmt_bind_param($stmt, 'sssi', $username, $email, $password, $creditinfo, (('on' == $shopkeeper) ? 1 : 0));
         mysqli_stmt_execute($stmt);
-    } //else {
+        echo 'success';
+    }//else {
     //    throw new Exception('MySQL error.');
     //}
 //} catch (Exception $e) {
