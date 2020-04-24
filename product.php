@@ -114,13 +114,19 @@
                 ?> </h4>
               <p class="product-description">
                 <?php
-                  echo $description.'-'.$price;
+                  echo $description.'-$'.$price;
                 ?>
               </p>
               <input type="button" name="" class="button-primary u-half-width" 
+              onclick="
               <?php
-                //checked if they are login and if so then discplay cc information.
-              ?>onclick="window.location.href = 'CCinfo.php';" value="Buy This">
+                if (empty($_COOKIE['uid'])) {
+                    echo 'window.location.href = \'login.php\';';
+                } else {
+                    echo 'window.location.href = \'CCinfo.php\';';
+                }
+
+              ?>" value="Buy This">
           </div>
         </div>
       </div>
