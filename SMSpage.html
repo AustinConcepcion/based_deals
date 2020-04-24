@@ -116,6 +116,7 @@
 				<button id="cancelDiscount" onclick="cancelPolicy()" style="float:left">Cancel</button>
 		</div>-->
 
+		<!--------------------------------------ACTIVE ITEMS------------------------------------------->
 		<h3 class="hero-heading"><center><u>Active Items</u></center></h2>
 
 		<table align="center" id="itemOnTable" class="u-nearfull-width">
@@ -153,6 +154,8 @@
 			</tr>
 		</table>
 		
+		<!--------------------------------------ACTIVE ORDERS------------------------------------------->
+		
 		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Active Orders</u></center></h2>
 
 		<table align="center" id="curOrders" class="u-nearfull-width">
@@ -166,6 +169,26 @@
 			</thead>
 		</table>
 		
+		<!--------------------------------------INACTIVE ORDERS------------------------------------------->
+		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Inactive Items</u></center></h2>
+
+		<table align="center" id="itemOffTable" class="u-nearfull-width">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Item Name</th>
+					<th width="50%">Description</th>
+					<th>Price</th>
+					<th>Category</th>
+				</tr>
+				<tr>
+					
+				</tr>
+					
+			</thead>
+		</table>
+		
+		<!--------------------------------------PAST ORDERS------------------------------------------->
 		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Past Orders</u></center></h2>
 		<table align="center" id="hisOrder" class="u-nearfull-width">
 			<thead>
@@ -178,21 +201,7 @@
 			</thead>
 		</table>
 		
-		<div align="center">
-			<input type="text" id="orderHistory" placeholder="Find expired order to print" style="width: 25%">
-			<button type="button" class="button-primary" onclick="window.print();return false;">Print Order</button>
-		</div>
-		
-		<table align="center" id="hisOrder" class="u-nearfull-width">
-			<thead>
-				<tr>
-					<th>Group Code</th>
-					<th>Item Name</th>
-					<th>Price</th>
-					<th>Category</th>
-				</tr>
-			</thead>
-		</table>
+
 		
 		<script>
 			var onCount = 4; //counts rows in the active items table
