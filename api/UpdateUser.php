@@ -29,11 +29,11 @@ try {
     $error = $e->getMessage();
 } finally {
     echo '{"error":'.$error.'}';
-    if ('none' != $error) {
-        header('Location: ../CCinfo.php.php?error='.$error);
-        exit;
-    }
-
-    header('Location: ../grouppage.php');
-    exit;
+    //if ('none' != $error) {
+    //    header('Location: ../CCinfo.php.php?error='.$error);
+    //    exit;
+    //}
+//
+    //header('Location: ../grouppage.php');
+    //exit;
 }
