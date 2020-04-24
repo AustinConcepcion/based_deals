@@ -15,10 +15,10 @@ try {
 
     //verify data
     if (empty($username) || empty($email) || empty($password)) {
-        throw new Exception('Empty field.');
+        throw new Exception('empty_field');
     }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        throw new Exception('Invalid email.');
+        throw new Exception('invalid_email');
     }
 //
     //// create sql query
@@ -30,11 +30,16 @@ try {
         printf('%d Row inserted.<br>', mysqli_stmt_affected_rows($stmt));
     //echo 'success';
     } else {
-        throw new Exception('MySQL error.');
+        throw new Exception('mysql_error');
     }
 } catch (Exception $e) {
     $error = $e->getMessage();
 } finally {
-    echo '{ "error": "'.$error.'" }';
-    //header('Location: ../login.html?error='.$error);
+    if ('none' != $error) {
+        header('Location: ../register.html?error='.$error);
+        exit;
+    }
+
+    header('Location: ../login.html');
+    exit;
 }
