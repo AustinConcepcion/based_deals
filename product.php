@@ -79,18 +79,42 @@
         <div class="container">
           <div class="row">
             <div class="one-half column product-image">
-              <img class="u-max-full-width" src="images/placeholder.png">
+              <img class="u-max-full-width" src="
+              <?php
+                include './api/includes/db.inc.php';
+                $image = 'images/placeholder.png';
+                $productname = '';
+                $price = 0.0;
+                $description = '';
+                $sql = 'SELECT * FROM product WHERE pid = ?';
+                $stmt = mysqli_stmt_init($conn);
+                if (mysqli_stmt_prepare($stmt, $sql)) {
+                    $pid = htmlspecialchars($_GET['pid'], ENT_QUOTES);
+                    mysqli_stmt_bind_param($stmt, 'i', $pid);
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+                    while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+                        //echo var_dump($row).'<br>';
+                        if (1 == $row[6]) {
+                            $productname = $row[0];
+                            $price = $row[1];
+                            $description = $row[3];
+                            $image = $row[2];
+                        }
+                    }
+                    echo $image;
+                }
+              ?>">
 
             </div>
             <div class="one-half column">
               <h4 class="product heading">
                 <?php
-                  //get product title
+                  echo $productname;
                 ?> </h4>
               <p class="product-description">
                 <?php
-                  //get product description
-                  //get product price
+                  echo $description.'-'.$price;
                 ?>
                 //This product is a product. It has a desicrption!//
               </p>
