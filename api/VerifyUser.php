@@ -27,9 +27,9 @@ try {
         mysqli_stmt_execute($stmt);
         //mysqli_stmt_store_result($stmt);
         printf('%d Row selected.<br>', mysqli_stmt_num_rows($stmt));
-        if (mysqli_stmt_num_rows($stmt) < 1) {
-            throw new Exception('username_not_exist');
-        }
+        //if (mysqli_stmt_num_rows($stmt) < 1) {
+        //    throw new Exception('username_not_exist');
+        //}
         $result = mysqli_stmt_get_result($stmt);
         $dpassword = '';
         $uid = 0;
