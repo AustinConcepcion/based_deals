@@ -101,13 +101,15 @@
                         $result = mysqli_stmt_get_result($stmt);
                         while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
                             echo var_dump($row).'<br>';
-                            echo '<tr>';
-                            echo '<td>'.$row[5].'</td>';
-                            echo '<td><a href="product.php?pid='.$row[5].'">'.$row[0].'</a></td>';
-                            echo '<td>'.$row[3].'</td>';
-                            echo '<td>'.$row[4].'</td>';
-                            echo '<td>'.$row[1].'</td>';
-                            echo '</tr>';
+                            if (1 == $row[6]) {
+                                echo '<tr>';
+                                echo '<td>'.$row[7].'</td>';
+                                echo '<td><a href="product.php?pid='.$row[7].'">'.$row[0].'</a></td>';
+                                echo '<td><a href="'.$row[5].'">'.$row[3].'</a></td>';
+                                echo '<td>'.$row[4].'</td>';
+                                echo '<td>'.$row[1].'</td>';
+                                echo '</tr>';
+                            }
                         }
                     }
                     //turn the items into the format of elements
@@ -119,27 +121,6 @@
                     //then the product price
                     //make sure the product link is uses something like product.php?pid=45823448
                   ?>
-                  <tr>
-                    <td>45823448</td>
-                    <td><a href="product.php">Yankee Candle Large Jar Candle Midsummer's Night<a href="product.php"></td>
-                    <td><a href="https://www.amazon.com/Yankee-Candle-Large-Midsummers-Night/dp/B000ORX6WI?ref_=s9_apbd_otopr_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=da763f1a-9ede-52e6-96df-4cedd103038c&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">https://www.amazon.com/Yankee-Candle-Large-Midsummers-Night/dp/B000ORX6WI?ref_=s9_apbd_otopr_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=da763f1a-9ede-52e6-96df-4cedd103038c&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</a></td>
-                    <td>Houseware</td>
-                    <td>$20.99</td>
-                  </tr>
-                  <tr>
-                    <td>36789452</td>
-                    <td><a href="product.php">Bath & Body Works, Aromatherapy Stress Relief 3-Wick Candle, Eucalyptus Spearmint</a></td>
-                    <td><a href="https://www.amazon.com/Bath-Body-Works-Aromatherapy-Eucalyptus/dp/B005O91CUE?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">https://www.amazon.com/Bath-Body-Works-Aromatherapy-Eucalyptus/dp/B005O91CUE?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</a></td>
-                    <td>Houseware</td>
-                    <td>$30.47</td>
-                  </tr>
-                  <tr>
-                    <td>63214786</td>
-                    <td><a href="https://www.amazon.com/Bath-Body-Works-Mahogany-Intensity/dp/B01M7TTA2S?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">Bath & Body Works White Barn 3-Wick Candle in Mahogany Teakwood High Intensity</a></td>
-                    <td><a href="https://www.amazon.com/Bath-Body-Works-Mahogany-Intensity/dp/B01M7TTA2S?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">https://www.amazon.com/Bath-Body-Works-Mahogany-Intensity/dp/B01M7TTA2S?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</a></td>
-                    <td>Houseware</td>
-                    <td>$33.79</td>
-                  </tr>
                 </tbody>
               </table>
           </div>
