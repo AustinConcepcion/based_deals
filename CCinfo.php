@@ -74,7 +74,7 @@
     </div>
   <!-- End NavBar -->
 	<h1 style="float: left;">Enter Customer Information</h1>
-		
+		<form action="api/UpdateUser.php" method="post">
 		<div style="float: left; border: 1px; width: 100%;">
 			<div>
 				<input type="text" id="fName" name="fname" placeholder="First Name" style="width: 20%">
