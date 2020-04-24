@@ -97,7 +97,7 @@
 
 		<!--appears when the add button is pressed-->
 		<!--Enter item information and saves it into a table-->
-		<div id="addInfo" style="display:none; padding: 40px;">
+		<div id="addInfo" class="wrap" style="display:none; padding: 40px;">
 			<p><b>Add Item</b></p>
 			<div style="float: left; border: 1px; width: 100%;">
 			<input type="text" id="ItemName" placeholder="Item Name" style="width: 20%">
@@ -117,7 +117,8 @@
 		</div>-->
 
 		<!--------------------------------------ACTIVE ITEMS------------------------------------------->
-		<h3 class="hero-heading"><center><u>Active Items</u></center></h2>
+		<div class="wrap">
+			<h3 class="hero-heading"><center><u>Active Items</u></center></h2>
 
 		<table align="center" id="itemOnTable" class="u-nearfull-width">
 			<thead>
@@ -153,9 +154,9 @@
 				<td><button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button></td>
 			</tr>
 		</table>
-
+</div>
 		<!--------------------------------------ACTIVE ORDERS------------------------------------------->
-
+<div class="wrap">
 		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Active Orders</u></center></h2>
 
 		<table align="center" id="curOrders" class="u-nearfull-width">
@@ -168,9 +169,10 @@
 				</tr>
 			</thead>
 		</table>
-
+</div>
 		<!--------------------------------------INACTIVE ORDERS------------------------------------------->
-		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Inactive Items</u></center></h2>
+	<div class="wrap">
+			<h3 class="hero-heading" style="padding-top: 20px"><center><u>Inactive Items</u></center></h2>
 
 		<table align="center" id="itemOffTable" class="u-nearfull-width">
 			<thead>
@@ -187,8 +189,9 @@
 
 			</thead>
 		</table>
-
+</div>
 		<!--------------------------------------PAST ORDERS------------------------------------------->
+		<div class="wrap">
 		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Past Orders</u></center></h2>
 		<table align="center" id="hisOrder" class="u-nearfull-width">
 			<thead>
@@ -200,7 +203,7 @@
 				</tr>
 			</thead>
 		</table>
-
+</div>
 		<!--------------------------------------PRINT ORDER------------------------------------------->
 
 		<div  align="center">
