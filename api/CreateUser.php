@@ -11,7 +11,7 @@ include './includes/db.inc.php';
     $password = $_POST['password'];
     $shopkeeper = $_POST['shopkeeper'];
 
-    echo "username:{$username} <br> email:{$email} <br> password:{$password} <br> shopkeeper:{$shopkeeper} <br>";
+    //echo "username:{$username} <br> email:{$email} <br> password:{$password} <br> shopkeeper:{$shopkeeper} <br>";
 
     //verify data
     //if (empty($username) || empty($email) || empty($password) || empty($shopkeeper)) {
@@ -28,12 +28,12 @@ include './includes/db.inc.php';
     //}
 //
     //// create sql query
-    //$sql = 'INSERT user_account (username, email, password, shopkeeper, dateCreated) VALUES(?, ?, ?, ?, NOW())';
-    //$stmt = mysqli_stmt_init($conn);
-    //if (mysqli_stmt_prepare($stmt, $sql)) {
-    //    mysqli_stmt_bind_param($stmt, 'sssi', $username, $email, $password, $creditinfo, ($shopkeeper ? 1 : 0));
-    //    mysqli_stmt_execute($stmt);
-    //} else {
+    $sql = 'INSERT user_account (username, email, password, shopkeeper, dateCreated) VALUES(?, ?, ?, ?, NOW())';
+    $stmt = mysqli_stmt_init($conn);
+    if (mysqli_stmt_prepare($stmt, $sql)) {
+        mysqli_stmt_bind_param($stmt, 'sssi', $username, $email, $password, $creditinfo, (('on' == $shopkeeper) ? 1 : 0));
+        mysqli_stmt_execute($stmt);
+    } //else {
     //    throw new Exception('MySQL error.');
     //}
 //} catch (Exception $e) {
