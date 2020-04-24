@@ -26,9 +26,10 @@ try {
     $stmt = mysqli_stmt_init($conn);
     if (mysqli_stmt_prepare($stmt, $sql)) {
         mysqli_stmt_bind_param($stmt, 'sssi', $username, $email, $password, $shopkeeper);
-        mysqli_stmt_execute($stmt);
+        if (!mysqli_stmt_execute($stmt)) {
+            throw new Exception('username_already_taken');
+        }
         printf('%d Row inserted.<br>', mysqli_stmt_affected_rows($stmt));
-    //echo 'success';
     } else {
         throw new Exception('mysql_error');
     }
