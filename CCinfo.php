@@ -99,9 +99,9 @@
 				<input type="text" id="cvv" name="cvv" placeholder="CVV" style="width: 8%;">
 			</div>
 			<div>
+			Purchase
 			</div>
 			<div>
-				Purchase
 				<input type="submit" name="" value="Submit" id="addSave" class="button-primary">
 				<button id="addCancel" class="button-primary" type="add" onclick="javascript:history.back()">Cancel</button>
 			</div>
