@@ -100,7 +100,14 @@
                         mysqli_stmt_execute($stmt);
                         $result = mysqli_stmt_get_result($stmt);
                         while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
-                            echo var_dump($row).'<br>';
+                            //echo var_dump($row).'<br>';
+                            echo '<tr>';
+                            echo '<td>'.$row[5].'<td>';
+                            echo '<td>'.$row[0].'<td>';
+                            echo '<td>'.$row[3].'<td>';
+                            echo '<td>'.$row[4].'<td>';
+                            echo '<td>'.$row[1].'<td>';
+                            echo '</tr>'
                         }
                     }
                     //turn the items into the format of elements
