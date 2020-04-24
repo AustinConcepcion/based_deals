@@ -10,7 +10,7 @@ create table user_account (
     name varchar(30),
     email varchar(30),
     password varchar(250),
-    address varchar(100),
+    address varchar(512),
     creditInfo varchar(50),
     dateCreated timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     shopkeeper boolean,
