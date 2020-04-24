@@ -9,7 +9,7 @@ create table user_account (
     uid int(8) not null auto_increment,
     name varchar(30),
     email varchar(30),
-    password varchar(20),
+    password varchar(250),
     address varchar(100),
     creditInfo varchar(50),
     dateCreated timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -50,15 +50,15 @@ create table discount_group (
     foreign key (uid) references user_account(uid)
 );
 
-insert into product_order (productname, price, productPic, description, category) values("Yankee Candle Large Jar Candle Midsummer's Night", 20.99,
+insert into product (productname, price, productPic, description, category) values("Yankee Candle Large Jar Candle Midsummer's Night", 20.99,
 "https://images-na.ssl-images-amazon.com/images/I/81idxwhmJzL._AC_SY450_.jpg",
 "Smells good yummy but do not eat it facts", "houseware");
 
-insert into product_order (productname, price, productPic, description, category) values("Bath & Body Works, Aromatherapy Stress Relief 3-Wick Candle, Eucalyptus Spearmint", 30.47,
+insert into product (productname, price, productPic, description, category) values("Bath & Body Works, Aromatherapy Stress Relief 3-Wick Candle, Eucalyptus Spearmint", 30.47,
 "https://images-na.ssl-images-amazon.com/images/I/61ALTSt9nZL._AC_SL1500_.jpg",
 "Smells good yummy but do not eat it facts", "houseware");
 
-insert into product_order (productname, price, productPic, description, category) values("Bath & Body Works White Barn 3-Wick Candle in Mahogany Teakwood High Intensity", 33.79,
+insert into product (productname, price, productPic, description, category) values("Bath & Body Works White Barn 3-Wick Candle in Mahogany Teakwood High Intensity", 33.79,
 "https://images-na.ssl-images-amazon.com/images/I/61cgxCeqCML._AC_SL1500_.jpg",
 "Smells good yummy but do not eat it facts", "houseware");
 
