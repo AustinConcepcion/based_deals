@@ -47,10 +47,10 @@
 
     <div class="nav-bar">
       <ul>
-        <li><a href="landing.html">based altar</a></li>
-        <li class="mob"><a href="searchresults.html">products</a></li>
-        <li class="mob"><a href="grouppage.html">groups</a></li>
-        <li class="mob"><a href="SMSpage.html">SMS</a></li>
+        <li><a href="landing.php">based altar</a></li>
+        <li class="mob"><a href="searchresults.php">products</a></li>
+        <li class="mob"><a href="grouppage.php">groups</a></li>
+        <li class="mob"><a href="SMSpage.php">SMS</a></li>
 
         <li class="active">
           <i class="fa fa-search" aria-hidden="true"></i>

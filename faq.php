@@ -5,7 +5,7 @@
     <!-- Basic Page Needs
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title>Based Altar</title>
+    <title>FAQ - Based Altar</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -33,6 +33,7 @@
 
   </head>
   <body>
+
     <!-- Begin NavBar -->
     <script>
     $(document).ready(function() {
@@ -71,53 +72,29 @@
     <div class="container">
       <div class="row">
         <div class="one-half column">
-          <h4 class="hero-heading">Stop buying alone.</h4>
-          <a class="button button-primary" href="login.html">Login</a>
-          <a class="button button-primary" href="register.html">Register</a>
+          <h3 class="hero-heading">COP4710 Project</h3>
+          <h5>A website by:</h5>
         </div>
         <div class="one-half column u-full-width">
-          <img src="images/basedaltar.png" width="100%">
+          <ul>
+            <li> Pedro LastName </li>
+            <li> Enelson LastName </li>
+            <li> Justtin LastName </li>
+            <li> Austin Concepcion </li>
+          </ul>
         </div>
+      </div>
+      <div class="row" style="text-align: center">
+        <p> This website is used to buy items in bulk off of Amazon for discounts. </p>
+        <p> It allows groups of people to pool their orders together for maximum savings. </p>
+        <p> It is only a proof of concept and cannot actually be used to buy anything. </p>
+        <p> Maybe one day? :) </p>
       </div>
     </div>
   </div>
 
-  <div class="section categories">
-    <div class="container">
-      <h3 class="section-heading">Start Shopping</h3>
-      <p class="section-description">Check out our latest deals!</p>
-      <div class="row">
-        <div class="one-third column category">
-          <img class="u-max-full-width" src="images/placeholder.png">
-        </div>
-        <div class="one-third column category">
-          <img class="u-max-full-width" src="images/placeholder.png">
-        </div>
-        <div class="one-third column category">
-          <img class="u-max-full-width" src="images/placeholder.png">
-        </div>
-      </div>
-      <div class="row">
-        <div class="one-third column category">
-          <img class="u-max-full-width" src="images/placeholder.png">
-        </div>
-        <div class="one-third column category">
-          <img class="u-max-full-width" src="images/placeholder.png">
-        </div>
-        <div class="one-third column category">
-          <img class="u-max-full-width" src="images/placeholder.png">
-        </div>
-      </div>
-      <div class="row">
-        <div class="two-thirds column category">
-          <img class="u-max-full-width" src="images/placeholder.png">
-        </div>
-        <div class="one-third column category">
-          <h3> Or Browse All Categories </h3>
-        </div>
-      </div>
-    </div>
 
+  <div class="section values">
     <div class="container">
       <div class="row">
         <div class="one-half column value">
@@ -136,11 +113,37 @@
 
   <div class="section get-help">
     <div class="container">
-      <h3 class="section-heading">Want to know more?</h3>
-      <p class="section-description">Check out our most commonly asked questions!</p>
-      <a class="button button-primary" href="faq.html">FAQ</a>
+      <h3 class="section-heading">Meet the team!</h3>
+      <div class="row">
+        <div class="one-half column category">
+          <img class="u-max-full-width" src="images/pedro.jpg">
+          <h4>Pedro</h4>
+        </div>
+        <div class="one-half column category">
+          <img class="u-max-full-width" src="images/enelson.jpg">
+          <h4> Enelson </h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="one-half column category">
+          <img class="u-max-full-width" src="images/justtin.jpg">
+          <h4> Justtin </h4>
+        </div>
+        <div class="one-half column category">
+          <img class="u-max-full-width" src="images/austin.jpg">
+          <h4> Austin </h4>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <img class="u-max-full-width" src="https://media1.fdncms.com/orlando/imager/u/original/2438321/maxresdefault.jpg">
+          <h2> LIL B BASED GOD BABY</h2>
+        </div>
+      </div>
     </div>
   </div>
+
+
 
 
 

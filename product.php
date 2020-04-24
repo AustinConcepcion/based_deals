@@ -5,7 +5,7 @@
     <!-- Basic Page Needs
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title>BasedDeals</title>
+    <title>Product Title</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -26,7 +26,6 @@
     <!-- Scripts
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="js/hashes.js"></script>
 
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -72,51 +71,41 @@
       <div class="section hero">
         <div class="container">
           <div class="row">
+            <div class="one-half column product-image">
+              <img class="u-max-full-width" src="images/placeholder.png">
+
+            </div>
             <div class="one-half column">
-              <h4 class="hero-heading">Register</h4>
-              <form action="api/CreateUser.php" method="post">
-                <h6 class="value-heading">Name</h6>
-                <input id="input-name" name="name" type="text" placeholder="April Ludgate" class="u-nearfull-width" required>
-                <h6 class="value-heading">Email</h6>
-                <input id="input-email" name="email" type="email" placeholder="bloodorphan@p&r.gov" class="u-nearfull-width" required>
-                <h6 class="value-heading">Password</h6>
-                <input id="input-password" name="password" type="password" placeholder="At least 8 characters" class="u-nearfull-width" required>
-                <h6 class="value-heading">Re-enter password</h6>
-                <input id="input-rpassword" name="rpassword" type="password" placeholder="Must match above" class="u-nearfull-width" required>
-                <label class="shopkeeper">
-                  <input id="input-shopkeeper" name="shopkeeper" type="checkbox">
-                  <span class="label-body">Are you a shopkeeper?</span>
-                </label>
-                <input type="submit" name="submit" class="button-primary u-nearfull-width" value="Create your account">
-
-              </form>
-            </div>
-            <div class="one-half column logo">
-              <img src="images/basedaltar.png" width="100%">
-            </div>
+              <h4 class="product heading"> //Product Title// </h4>
+              <p class="product-description">
+                //This product is a product. It has a desicrption!//
+              </p>
+              <input type="button" name="" class="button-primary u-half-width" onclick="window.location.href = 'CCinfo.html';" value="Buy This">
           </div>
         </div>
       </div>
+      </div>
 
-      <div class="section hero">
+
+
+      <div class="section categories">
         <div class="container">
+          <h3 class="section-heading">Related Products</h3>
+          <p class="section-description">From Category: //category// </p>
           <div class="row">
+            <div class="three columns category">
+              <img class="u-max-full-width" src="images/placeholder.png">
+            </div>
+            <div class="three columns category">
+              <img class="u-max-full-width" src="images/placeholder.png">
+            </div>
+            <div class="three columns category">
+              <img class="u-max-full-width" src="images/placeholder.png">
+            </div>
+            <div class="three columns category">
+              <img class="u-max-full-width" src="images/placeholder.png">
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div class="section get-register">
-        <div class="container">
-          <h3 class="section-heading">Already have an account?</h3>
-          <a class="button button-primary" href="login.html">Login</a>
-        </div>
-      </div>
-
-      <div class="section get-help">
-        <div class="container">
-          <h3 class="section-heading">Want to know more?</h3>
-          <p class="section-description">Check out our most commonly asked questions!</p>
-          <a class="button button-primary" href="faq.html">FAQ</a>
         </div>
       </div>
 
