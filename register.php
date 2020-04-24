@@ -49,10 +49,10 @@
 
     <div class="nav-bar">
       <ul>
-        <li><a href="landing.html">based altar</a></li>
-        <li class="mob"><a href="searchresults.html">products</a></li>
-        <li class="mob"><a href="grouppage.html">groups</a></li>
-        <li class="mob"><a href="SMSpage.html">SMS</a></li>
+        <li><a href="landing.php">based altar</a></li>
+        <li class="mob"><a href="searchresults.php">products</a></li>
+        <li class="mob"><a href="grouppage.php">groups</a></li>
+        <li class="mob"><a href="SMSpage.php">SMS</a></li>
 
         <li class="active">
           <i class="fa fa-search" aria-hidden="true"></i>
@@ -108,7 +108,7 @@
       <div class="section get-register">
         <div class="container">
           <h3 class="section-heading">Already have an account?</h3>
-          <a class="button button-primary" href="login.html">Login</a>
+          <a class="button button-primary" href="login.php">Login</a>
         </div>
       </div>
 
@@ -116,7 +116,7 @@
         <div class="container">
           <h3 class="section-heading">Want to know more?</h3>
           <p class="section-description">Check out our most commonly asked questions!</p>
-          <a class="button button-primary" href="faq.html">FAQ</a>
+          <a class="button button-primary" href="faq.php">FAQ</a>
         </div>
       </div>
 

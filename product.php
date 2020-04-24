@@ -5,7 +5,7 @@
     <!-- Basic Page Needs
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title>Login - Based Altar</title>
+    <title>Product Title</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -71,54 +71,43 @@
       <div class="section hero">
         <div class="container">
           <div class="row">
+            <div class="one-half column product-image">
+              <img class="u-max-full-width" src="images/placeholder.png">
+
+            </div>
             <div class="one-half column">
-              <h4 class="hero-heading">Login</h4>
-              <form action="api/VerifyUser.php" method="post">
-                <input id="input-email" name="email" type="email" placeholder="Email*" class="u-nearfull-width" required>
-                <input id="input-password" name="password" type="password" placeholder="Password*" class="u-nearfull-width" required>
-                <input id="input-submit" type="submit" name="" class="button-primary u-nearfull-width" value="Login">
-                <label>
-                  <input id="input-remember" type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-              </form>
-            </div>
-            <div class="one-half column u-full-width">
-              <img src="images/basedaltar.png" width="100%">
-            </div>
+              <h4 class="product heading"> //Product Title// </h4>
+              <p class="product-description">
+                //This product is a product. It has a desicrption!//
+              </p>
+              <input type="button" name="" class="button-primary u-half-width" onclick="window.location.href = 'CCinfo.php';" value="Buy This">
           </div>
         </div>
       </div>
-
-      <div class="section get-register">
-        <div class="container">
-          <h3 class="section-heading">Don't have an account?</h3>
-          <p class="section-description">Register to create or join groups!</p>
-          <a class="button button-primary" href="register.php">Register</a>
-        </div>
       </div>
 
-      <div class="section get-help">
-        <div class="container">
-          <h3 class="section-heading">Want to know more?</h3>
-          <p class="section-description">Check out our most commonly asked questions!</p>
-          <a class="button button-primary" href="faq.php">FAQ</a>
-        </div>
-      </div>
 
-    <!--  <div class="section categories">
+
+      <div class="section categories">
         <div class="container">
-          <h3 class="section-heading">This is the bottom lol</h3>
-          <p class="section-description">Social Media buttons or some shit can go here?</p>
+          <h3 class="section-heading">Related Products</h3>
+          <p class="section-description">From Category: //category// </p>
           <div class="row">
-            <div class="one-half column category">
+            <div class="three columns category">
               <img class="u-max-full-width" src="images/placeholder.png">
             </div>
-            <div class="one-half column category">
+            <div class="three columns category">
+              <img class="u-max-full-width" src="images/placeholder.png">
+            </div>
+            <div class="three columns category">
+              <img class="u-max-full-width" src="images/placeholder.png">
+            </div>
+            <div class="three columns category">
               <img class="u-max-full-width" src="images/placeholder.png">
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
 
 
 

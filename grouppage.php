@@ -5,7 +5,7 @@
     <!-- Basic Page Needs
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title>Login - Based Altar</title>
+    <title>Group Page</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -71,54 +71,66 @@
       <div class="section hero">
         <div class="container">
           <div class="row">
+            <div class="one-half column product-image">
+              <img class="u-max-full-width" src="images/placeholder.png">
+
+            </div>
             <div class="one-half column">
-              <h4 class="hero-heading">Login</h4>
-              <form action="api/VerifyUser.php" method="post">
-                <input id="input-email" name="email" type="email" placeholder="Email*" class="u-nearfull-width" required>
-                <input id="input-password" name="password" type="password" placeholder="Password*" class="u-nearfull-width" required>
-                <input id="input-submit" type="submit" name="" class="button-primary u-nearfull-width" value="Login">
-                <label>
-                  <input id="input-remember" type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-              </form>
+                <table class="u-full-width">
+                  <thead>
+                    <tr>
+                      <th>Product Name</th>
+                      <th>Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Product Title</td>
+                      <td>Number of group members<!--use sql calls on orderform.html--></td>
+                    </tr>
+                  </tbody>
+                  <thead>
+                      <tr>
+                          <th>Total Cost<!--use sql calls on orderform.html--></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+
+                    </tr>
+                  </tbody>
+                </table>
+                <form action="" method="post">
+                  <input id="input-groupId" name="groupId" type="text" placeholder="Group ID" class="u-nearfull-width" required>
+                  <input id="input-submit" type="submit" name="submitGroupId" class="button-primary u-nearfull-width" value="Join">
+                </form>
             </div>
-            <div class="one-half column u-full-width">
-              <img src="images/basedaltar.png" width="100%">
-            </div>
-          </div>
         </div>
       </div>
-
-      <div class="section get-register">
-        <div class="container">
-          <h3 class="section-heading">Don't have an account?</h3>
-          <p class="section-description">Register to create or join groups!</p>
-          <a class="button button-primary" href="register.php">Register</a>
-        </div>
       </div>
 
-      <div class="section get-help">
-        <div class="container">
-          <h3 class="section-heading">Want to know more?</h3>
-          <p class="section-description">Check out our most commonly asked questions!</p>
-          <a class="button button-primary" href="faq.php">FAQ</a>
-        </div>
-      </div>
 
-    <!--  <div class="section categories">
+
+      <div class="section categories">
         <div class="container">
-          <h3 class="section-heading">This is the bottom lol</h3>
-          <p class="section-description">Social Media buttons or some shit can go here?</p>
+          <h3 class="section-heading">Groups with similar products</h3>
+          <p class="section-description">Groups with items from //category//</p>
           <div class="row">
-            <div class="one-half column category">
+            <div class="three columns category">
               <img class="u-max-full-width" src="images/placeholder.png">
             </div>
-            <div class="one-half column category">
+            <div class="three columns category">
+              <img class="u-max-full-width" src="images/placeholder.png">
+            </div>
+            <div class="three columns category">
+              <img class="u-max-full-width" src="images/placeholder.png">
+            </div>
+            <div class="three columns category">
               <img class="u-max-full-width" src="images/placeholder.png">
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
 
 
 

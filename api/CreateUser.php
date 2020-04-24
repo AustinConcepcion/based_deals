@@ -38,10 +38,10 @@ try {
 } finally {
     echo '{"error":'.$error.'}';
     if ('none' != $error) {
-        header('Location: ../register.html?error='.$error);
+        header('Location: ../register.php?error='.$error);
         exit;
     }
 
-    header('Location: ../login.html');
+    header('Location: ../login.php');
     exit;
 }

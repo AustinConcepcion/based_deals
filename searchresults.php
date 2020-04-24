@@ -47,10 +47,10 @@
 
     <div class="nav-bar">
       <ul>
-        <li><a href="landing.html">based altar</a></li>
-        <li class="mob"><a href="searchresults.html">products</a></li>
-        <li class="mob"><a href="grouppage.html">groups</a></li>
-        <li class="mob"><a href="SMSpage.html">SMS</a></li>
+        <li><a href="landing.php">based altar</a></li>
+        <li class="mob"><a href="searchresults.php">products</a></li>
+        <li class="mob"><a href="grouppage.php">groups</a></li>
+        <li class="mob"><a href="SMSpage.php">SMS</a></li>
 
         <li class="active">
           <i class="fa fa-search" aria-hidden="true"></i>
@@ -83,14 +83,14 @@
                 <tbody>
                   <tr>
                     <td>45823448</td>
-                    <td><a href="product.html">Yankee Candle Large Jar Candle Midsummer's Night</a></td>
+                    <td><a href="product.php">Yankee Candle Large Jar Candle Midsummer's Night</a></td>
                     <td><a href="https://www.amazon.com/Yankee-Candle-Large-Midsummers-Night/dp/B000ORX6WI?ref_=s9_apbd_otopr_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=da763f1a-9ede-52e6-96df-4cedd103038c&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">https://www.amazon.com/Yankee-Candle-Large-Midsummers-Night/dp/B000ORX6WI?ref_=s9_apbd_otopr_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=da763f1a-9ede-52e6-96df-4cedd103038c&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</a></td>
                     <td>Houseware</td>
                     <td>$20.99</td>
                   </tr>
                   <tr>
                     <td>36789452</td>
-                    <td><a href="product.html">Bath & Body Works, Aromatherapy Stress Relief 3-Wick Candle, Eucalyptus Spearmint</a></td>
+                    <td><a href="product.php">Bath & Body Works, Aromatherapy Stress Relief 3-Wick Candle, Eucalyptus Spearmint</a></td>
                     <td><a href="https://www.amazon.com/Bath-Body-Works-Aromatherapy-Eucalyptus/dp/B005O91CUE?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">https://www.amazon.com/Bath-Body-Works-Aromatherapy-Eucalyptus/dp/B005O91CUE?ref_=s9_apbd_orecs_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=45006a34-893c-50bd-a0bc-274f77518114&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</a></td>
                     <td>Houseware</td>
                     <td>$30.47</td>
