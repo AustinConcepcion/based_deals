@@ -40,7 +40,7 @@ try {
                 while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
                     $sql = 'INSERT discount_group SET orderid = ? AND uid = ?';
                     if (mysqli_stmt_prepare($stmt, $sql)) {
-                        $orderid = $row[0];
+                        echo var_dump($row[0]);
                         mysqli_stmt_bind_param($stmt, 'ii', $orderid, $uid);
                         mysqli_stmt_execute($stmt);
                     }
@@ -55,12 +55,12 @@ try {
 } catch (Exception $e) {
     $error = $e->getMessage();
 } finally {
-    echo '{"error":'.$error.'}';
-    if ('none' != $error) {
-        header('Location: ../CCinfo.php.php?error='.$error);
-        exit;
-    }
-
-    header('Location: ../grouppage.php?orderid='.$orderid);
-    exit;
+    //echo '{"error":'.$error.'}';
+    //if ('none' != $error) {
+    //    header('Location: ../CCinfo.php.php?error='.$error);
+    //    exit;
+    //}
+//
+    //header('Location: ../grouppage.php?orderid='.$orderid);
+    //exit;
 }
