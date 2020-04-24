@@ -34,7 +34,6 @@
 	</head>
 	<!---->
 	<body style="background-color:#E9E9E9;">
-		
 		<!-- Begin NavBar -->
     <script>
     $(document).ready(function() {
@@ -52,6 +51,7 @@
         <li><a href="landing.html">based altar</a></li>
         <li class="mob"><a href="searchresults.html">products</a></li>
         <li class="mob"><a href="grouppage.html">groups</a></li>
+        <li class="mob"><a href="login.html">login</a></li>
         <li class="mob"><a href="SMSpage.html">SMS</a></li>
 
         <li class="active">
@@ -61,7 +61,7 @@
             <input type="button" value="Search"/>
           </div>
         </li>
-        <li class="mob">//Name//</i></li>
+        <!--<li class="mob"><a href="faq.html"><i class="fa fa-question"></i></a></li>-->
       </ul>
     </div>
   <!-- End NavBar -->
@@ -163,26 +163,45 @@
 					<th>Price</th>
 					<th>Category</th>
 				</tr>
-				<tr>
+			</thead>
+		</table>
+		
+		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Past Orders</u></center></h2>
 
+		<table align="center" id="orderHisotry" class="u-nearfull-width">
+			<thead>
+				<tr>
+					<th>Group Code</th>
+					<th>Item Name</th>
+					<th>Price</th>
 				</tr>
+				<!--<tr>
+					<td>00000001</td>
+					<td> </td>
+					<td> </td>
+					<td><button type="button" class="button-primary" onclick="window.print();return false;">Print Order</button></td>
+				</tr>-->
 
 			</thead>
 		</table>
-
+		
 		<div align="center">
-			<input type="text" id="orderHistory" placeholder="Find order to print" style="width: 25%">
+			<input type="text" id="orderHistory" placeholder="Find expired order to print" style="width: 25%">
 			<button type="button" class="button-primary" onclick="window.print();return false;">Print Order</button>
 		</div>
-
+		
 		<script>
 			var onCount = 4; //counts rows in the active items table
 			var offCount = 1; //counts rows in the inactive items table
-			//var discountPerc = 0;
+			var hisCount = 2; //counts rows in order history table
 			var editRow = onCount;
 			var editNam, editDes, editPric, editCate;
 
-
+			
+			function addOrder(){
+			
+			}
+			
 			function searchFunc(){
 				var searchVal = document.getElementById("Search").value;
 				var table = document.getElementById("itemOnTable");
@@ -210,60 +229,6 @@
 					}
 				}
 			}
-
-			//RIP to the master Discount Policy *Sniff*
-			//I think I'll Keep this in here for now
-			/*//displays the discount percentage field when the discount policy button is pressed
-			function addPolicy(){
-				var policy = document.getElementById("Policy");
-				var discButt1 = document.getElementById("discButt1");
-				var discButt2 = document.getElementById("discButt2");
-				if (policy.style.display === "inline")//if the discount percentage field is already showing, hide their buttons
-				{
-					discButt1.style.display = "none";
-					discButt2.style.display = "none";
-				}
-				else // otherwise, display the field and then hide the buttons
-				{
-					policy.style.display = "inline";
-					discButt1.style.display = "none";
-					discButt2.style.display = "none";
-				}
-
-				//setButton.style.display = "none";
-			}
-			function cancelPolicy(){ //by pressing the cancel button on the discount percentage field, it will revert to just the buttons
-				var policy = document.getElementById("Policy");
-				var addInfo = document.getElementById("addInfo");
-				policy.style.display = "none";
-				var discButt1 = document.getElementById("discButt1");
-				var discButt2 = document.getElementById("discButt2");
-
-				if (addInfo.style.display ==="none"){
-					discButt2.style.display = "inline";
-				}
-				else {
-					discButt1.style.display = "inline";
-				}
-			}
-
-			function savePolicy(){
-
-				var discount = document.getElementById("percentage").value;
-
-				if (discount === "" || discount < 0 || discount > 100 ) //makes sure user enters a percentage between 0 and 100
-				{
-					alert("Please choose a percentage between 0 and 100.");
-				}
-				else //then saves it if it is between 0 and 100
-				{
-					alert("Saved. You set the policy to " + discount + "%.");
-					discountPerc = discount;
-					cancelPolicy();
-				}
-
-
-			}*/
 
 			function addOption() {//displays the fields from the AddInfo section
 
