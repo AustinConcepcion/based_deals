@@ -20,7 +20,7 @@ try {
     }
 
     // create sql querie
-    $sql = 'SELECT password, uid FROM user_account WHERE email = ?';
+    $sql = 'SELECT password, uid, username FROM user_account WHERE email = ?';
     $stmt = mysqli_stmt_init($conn);
     if (mysqli_stmt_prepare($stmt, $sql)) {
         mysqli_stmt_bind_param($stmt, 's', $email);
@@ -29,11 +29,13 @@ try {
         $result = mysqli_stmt_get_result($stmt);
         $dpassword = '';
         $uid = 0;
+        $username = '';
         $count = 0;
         while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
             ++$count;
             $dpassword = $row[0];
             $uid = $row[1];
+            $username = $row[2];
         }
 
         if ($count < 1) {
@@ -45,13 +47,14 @@ try {
             throw new Exception('invalid_username_or_password');
         }
 
-        if (0 != $uid) {
+        if (0 != $uid && !empty($username)) {
             if ('on' == $remember) {
                 $time = time() + 7 * 24 * 3600;
             } else {
                 $time = time() + 2 * 3600;
             }
-            setcookie('userid', $uid, $time);
+            setcookie('uid', $uid, $time);
+            setcookie('username', $username, $time);
         }
         // expire in 1 hour
     } else {

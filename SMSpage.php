@@ -46,12 +46,13 @@
  		});
     </script>
 
-	<div class="nav-bar">
+    <div class="nav-bar">
       <ul>
-        <li><a href="landing.php">based altar</a></li>
-        <li class="mob"><a href="searchresults.php">products</a></li>
-        <li class="mob"><a href="grouppage.php">groups</a></li>
-        <li class="mob"><a href="SMSpage.php">SMS</a></li>
+        <li><a href="landing.html">based altar</a></li>
+        <li class="mob"><a href="searchresults.html">products</a></li>
+        <li class="mob"><a href="grouppage.html">groups</a></li>
+        <li class="mob"><a href="login.html">login</a></li>
+        <li class="mob"><a href="SMSpage.html">SMS</a></li>
 
         <li class="active">
           <i class="fa fa-search" aria-hidden="true"></i>
@@ -60,7 +61,7 @@
             <input type="button" value="Search"/>
           </div>
         </li>
-        <li class="mob">//Name//</i></li>
+        <!--<li class="mob"><a href="faq.html"><i class="fa fa-question"></i></a></li>-->
       </ul>
     </div>
   <!-- End NavBar -->
@@ -115,6 +116,7 @@
 				<button id="cancelDiscount" onclick="cancelPolicy()" style="float:left">Cancel</button>
 		</div>-->
 
+		<!--------------------------------------ACTIVE ITEMS------------------------------------------->
 		<h3 class="hero-heading"><center><u>Active Items</u></center></h2>
 
 		<table align="center" id="itemOnTable" class="u-nearfull-width">
@@ -151,7 +153,9 @@
 				<td><button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button></td>
 			</tr>
 		</table>
-		
+
+		<!--------------------------------------ACTIVE ORDERS------------------------------------------->
+
 		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Active Orders</u></center></h2>
 
 		<table align="center" id="curOrders" class="u-nearfull-width">
@@ -164,7 +168,27 @@
 				</tr>
 			</thead>
 		</table>
-		
+
+		<!--------------------------------------INACTIVE ORDERS------------------------------------------->
+		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Inactive Items</u></center></h2>
+
+		<table align="center" id="itemOffTable" class="u-nearfull-width">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Item Name</th>
+					<th width="50%">Description</th>
+					<th>Price</th>
+					<th>Category</th>
+				</tr>
+				<tr>
+
+				</tr>
+
+			</thead>
+		</table>
+
+		<!--------------------------------------PAST ORDERS------------------------------------------->
 		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Past Orders</u></center></h2>
 		<table align="center" id="hisOrder" class="u-nearfull-width">
 			<thead>
@@ -176,23 +200,19 @@
 				</tr>
 			</thead>
 		</table>
+
+		<!--------------------------------------PRINT ORDER------------------------------------------->
 		
-		<div align="center">
-			<input type="text" id="orderHistory" placeholder="Find expired order to print" style="width: 25%">
-			<button type="button" class="button-primary" onclick="window.print();return false;">Print Order</button>
+		<div  align="center">
+			<input type="text" id="Search"  placeholder="Enter Group Discount Code" name="Search" style=" border: 1px solid gray;">
+			<button type="submit" class="button-primary" onclick="" style="border: 1px solid grey;">
+				Print Order
+			</button>
 		</div>
+
+
 		
-		<table align="center" id="hisOrder" class="u-nearfull-width">
-			<thead>
-				<tr>
-					<th>Group Code</th>
-					<th>Item Name</th>
-					<th>Price</th>
-					<th>Category</th>
-				</tr>
-			</thead>
-		</table>
-		
+<!---------------------------------------------------Script-------------------------------------------------------------------------->
 		<script>
 			var onCount = 4; //counts rows in the active items table
 			var offCount = 1; //counts rows in the inactive items table
@@ -200,11 +220,11 @@
 			var editRow = onCount;
 			var editNam, editDes, editPric, editCate;
 
-			
+
 			function addOrder(){
-			
+
 			}
-			
+
 			function searchFunc(){
 				var searchVal = document.getElementById("Search").value;
 				var table = document.getElementById("itemOnTable");
@@ -346,7 +366,7 @@
 			//permanently deltes item
 			function permRemove() {
 
-				if (confirm("Are you sure you want to delete this item?")){
+				if (confirm("Are you sure you want to delete this item? Press OK to delete or Cancel otherwise")){
 					var td = event.target.parentNode;
 					var tr = td.parentNode;
 					tr.parentNode.removeChild(tr);
