@@ -41,8 +41,8 @@ try {
 
         //$result = mysqli_stmt_get_result($stmt);
         while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
-            foreach ($row as $r) {
-                echo "Option {$r} ";
+            foreach ($row as $key => $r) {
+                echo "Option {$key} => {$r} <br>";
             }
             echo "\n";
         }
