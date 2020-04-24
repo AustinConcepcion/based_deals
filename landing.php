@@ -72,8 +72,8 @@
       <div class="row">
         <div class="one-half column">
           <h4 class="hero-heading">Stop buying alone.</h4>
-          <a class="button button-primary" href="login.html">Login</a>
-          <a class="button button-primary" href="register.html">Register</a>
+          <a class="button button-primary" href="login.php">Login</a>
+          <a class="button button-primary" href="register.php">Register</a>
         </div>
         <div class="one-half column u-full-width">
           <img src="images/basedaltar.png" width="100%">
@@ -138,7 +138,7 @@
     <div class="container">
       <h3 class="section-heading">Want to know more?</h3>
       <p class="section-description">Check out our most commonly asked questions!</p>
-      <a class="button button-primary" href="faq.html">FAQ</a>
+      <a class="button button-primary" href="faq.php">FAQ</a>
     </div>
   </div>
 

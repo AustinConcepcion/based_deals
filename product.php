@@ -80,7 +80,7 @@
               <p class="product-description">
                 //This product is a product. It has a desicrption!//
               </p>
-              <input type="button" name="" class="button-primary u-half-width" onclick="window.location.href = 'CCinfo.html';" value="Buy This">
+              <input type="button" name="" class="button-primary u-half-width" onclick="window.location.href = 'CCinfo.php';" value="Buy This">
           </div>
         </div>
       </div>

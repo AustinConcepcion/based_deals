@@ -108,7 +108,7 @@
       <div class="section get-register">
         <div class="container">
           <h3 class="section-heading">Already have an account?</h3>
-          <a class="button button-primary" href="login.html">Login</a>
+          <a class="button button-primary" href="login.php">Login</a>
         </div>
       </div>
 
@@ -116,7 +116,7 @@
         <div class="container">
           <h3 class="section-heading">Want to know more?</h3>
           <p class="section-description">Check out our most commonly asked questions!</p>
-          <a class="button button-primary" href="faq.html">FAQ</a>
+          <a class="button button-primary" href="faq.php">FAQ</a>
         </div>
       </div>
 
