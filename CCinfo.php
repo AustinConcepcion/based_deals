@@ -77,33 +77,31 @@
 		
 		<div style="float: left; border: 1px; width: 100%;">
 			<div>
-				<input type="text" id="fName" placeholder="First Name" style="width: 20%">
-				<input type="text" id="lName" placeholder="Last Name" style="width: 20%">
+				<input type="text" id="fName" name="fname" placeholder="First Name" style="width: 20%">
+				<input type="text" id="lName" name="lname" placeholder="Last Name" style="width: 20%">
 			</div>
 			<div>
-				<input type="text" id="Address" placeholder="Address" style="width: 50%">
+				<input type="text" id="Address" name="address" placeholder="Address" style="width: 50%">
 				</div>
 			<div>
-				<input type="text" id="Address2" placeholder="Address 2(P.O box, suite no., apt no.)" style="width: 50%">
+				<input type="text" id="Address2" name="address2" placeholder="Address 2(P.O box, suite no., apt no.)" style="width: 50%">
 			</div>
 			<div>
-				<input type="text" id="City" placeholder="City" style="width: 15%">
-				<input type="text" id="zCode" placeholder="Zip Code" style="width: 15%;">
-				<input type="text" id="state" placeholder="State" style="width: 8%">
+				<input type="text" id="City" name="city" placeholder="City" style="width: 15%">
+				<input type="text" id="zCode" name="zipcode" placeholder="Zip Code" style="width: 15%;">
+				<input type="text" id="state" name="state" placeholder="State" style="width: 8%">
 			</div>
 			<div>
-				<input type="text" id="ccNo" placeholder="Credit Card Number" style="width: 25%">
+				<input type="text" id="ccNo" name="ccnumber" placeholder="Credit Card Number" style="width: 25%">
 			</div>
 			<div>
-				<input type="text" id="expDate" placeholder="Exp Date (mm/yyyy)" style="width: 15%">
-				<input type="text" id="cvv" placeholder="CVV" style="width: 8%;">
+				<input type="text" id="expDate" name="expiration" placeholder="Exp Date (mm/yyyy)" style="width: 15%">
+				<input type="text" id="cvv" name="cvv" placeholder="CVV" style="width: 8%;">
 			</div>
 			<div>
-				<p>Enter Product Number you Wish to buy</p>
-				<input type="text" id="buyNo" placeholder="Product Number" style="float:left;">
 			</div>
 			<div>
-				<button id="addSave" class="button-primary" type="add" onclick="">Purchase</button>
+				<input type="submit" id="addSave" class="button-primary" type="add" onclick="">Purchase
 				<button id="addCancel" class="button-primary" type="add" onclick="javascript:history.back()">Cancel</button>
 			</div>
 		</div>
