@@ -53,8 +53,8 @@ try {
             } else {
                 $time = time() + 2 * 3600;
             }
-            setcookie('uid', $uid, $time, '/');
-            setcookie('username', $username, $time, '/');
+            setcookie('uid', $uid, $time, '/based_deals');
+            setcookie('username', $username, $time, '/based_deals');
         }
         // expire in 1 hour
     } else {
