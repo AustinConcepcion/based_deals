@@ -58,12 +58,12 @@ try {
 } catch (Exception $e) {
     $error = $e->getMessage();
 } finally {
-    //echo '{"error":'.$error.'}';
-    //if ('none' != $error) {
-    //    header('Location: ../CCinfo.php.php?error='.$error);
-    //    exit;
-    //}
-//
-    //header('Location: ../grouppage.php?orderid='.$orderid);
-    //exit;
+    echo '{"error":'.$error.'}';
+    if ('none' != $error) {
+        header('Location: ../CCinfo.php.php?error='.$error);
+        exit;
+    }
+
+    header('Location: ../grouppage.php?orderid='.$orderid);
+    exit;
 }
