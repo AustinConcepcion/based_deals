@@ -5,6 +5,7 @@ $error = 'none';
 //echo 'test<br>';
 
 $orderid = 0;
+$pid = $_GET['pid'];
 
 try {
     // get json data
@@ -13,7 +14,7 @@ try {
     $address = $_POST['address'].', '.$_POST['address2'].', '.$_POST['city'].', '.$_POST['zipcode'].', '.$_POST['state'];
     $creditinfo = $_POST['ccnumber'].', '.$_POST['expiration'].', '.$_POST['cvv'];
     $uid = $_COOKIE['uid'];
-    $pid = $_GET['pid'];
+
     //$username = htmlspecialchars($_POST['name'], ENT_QUOTES);
     //$email = htmlspecialchars($_POST['email'], ENT_QUOTES);
     //$password = password_hash(htmlspecialchars($_POST['password'], ENT_QUOTES), PASSWORD_DEFAULT);
@@ -65,6 +66,6 @@ try {
         exit;
     }
 
-    header('Location: ../grouppage.php?orderid='.$orderid.'&pid='.$_GET['pid']);
+    header('Location: ../grouppage.php?orderid='.$orderid.'&pid='.$pid);
     exit;
 }
