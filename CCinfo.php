@@ -101,7 +101,7 @@
 			<div>
 			</div>
 			<div>
-				<input type="submit" id="addSave" class="button-primary" type="add" onclick="">Purchase
+				<input type="submit" name="" value="Submit" id="addSave" class="button-primary">Purchase
 				<button id="addCancel" class="button-primary" type="add" onclick="javascript:history.back()">Cancel</button>
 			</div>
 		</div>
