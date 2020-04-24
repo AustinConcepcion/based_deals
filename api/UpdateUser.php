@@ -32,10 +32,12 @@ try {
         if (mysqli_stmt_prepare($stmt, $sql)) {
             mysqli_stmt_bind_param($stmt, 'ii', $uid, $pid);
             mysqli_stmt_execute($stmt);
+            echo 'product inserted<br>';
 
             $sql = 'SELECT LAST_INSERT_ID(orderid) from product_order';
             if (mysqli_stmt_prepare($stmt, $sql)) {
                 mysqli_stmt_execute($stmt);
+                echo 'get orderid<br>';
                 $result = mysqli_stmt_get_result($stmt);
                 while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
                     $sql = 'INSERT discount_group SET orderid = ? AND uid = ?';
@@ -43,6 +45,7 @@ try {
                         echo var_dump($row[0]);
                         mysqli_stmt_bind_param($stmt, 'ii', $orderid, $uid);
                         mysqli_stmt_execute($stmt);
+                        echo 'group inserted<br>';
                     }
                 }
             }
