@@ -103,9 +103,9 @@
 
 		<!--appears when the add button is pressed-->
 		<!--Enter item information and saves it into a table-->
-		<div id="addInfo" class="wrap" style="display:none; padding: 40px;">
+		<div id="addInfo"  style="display:none; padding: 40px;">
 			<p><b>Add Item</b></p>
-			<div style="float: left; border: 1px; width: 100%;">
+			<div style="float: left; border: 1px; width: 100%;" class="wrap">
 			<input type="text" id="ItemName" placeholder="Item Name" style="width: 20%">
 			<input type="text" id="Description" placeholder="Description" style="width: 67%">
 			<input type="text" id="Price" placeholder="Price" style="width: 6%">
@@ -123,9 +123,9 @@
 		</div>-->
 
 		<!--------------------------------------ACTIVE ITEMS------------------------------------------->
-		<div class="wrap">
-			<h3 class="hero-heading"><center><u>Active Items</u></center></h2>
 
+			<h3 class="hero-heading"><center><u>Active Items</u></center></h2>
+<div class="wrap">
 		<table align="center" id="itemOnTable" class="u-nearfull-width">
 			<thead>
 				<tr>
@@ -162,9 +162,9 @@
 		</table>
 </div>
 		<!--------------------------------------ACTIVE ORDERS------------------------------------------->
-<div class="wrap">
-		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Active Orders</u></center></h2>
 
+		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Active Orders</u></center></h2>
+<div class="wrap">
 		<table align="center" id="curOrders" class="u-nearfull-width">
 			<thead>
 				<tr>
@@ -177,9 +177,9 @@
 		</table>
 </div>
 		<!--------------------------------------INACTIVE ORDERS------------------------------------------->
-	<div class="wrap">
-			<h3 class="hero-heading" style="padding-top: 20px"><center><u>Inactive Items</u></center></h2>
 
+			<h3 class="hero-heading" style="padding-top: 20px"><center><u>Inactive Items</u></center></h2>
+<div class="wrap">
 		<table align="center" id="itemOffTable" class="u-nearfull-width">
 			<thead>
 				<tr>
@@ -197,8 +197,9 @@
 		</table>
 </div>
 		<!--------------------------------------PAST ORDERS------------------------------------------->
-		<div class="wrap">
+
 		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Past Orders</u></center></h2>
+<div class="wrap">
 		<table align="center" id="hisOrder" class="u-nearfull-width">
 			<thead>
 				<tr>
