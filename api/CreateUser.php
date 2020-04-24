@@ -31,7 +31,8 @@ include './includes/db.inc.php';
     $sql = 'INSERT user_account (username, email, password, shopkeeper, dateCreated) VALUES(?, ?, ?, ?, NOW())';
     $stmt = mysqli_stmt_init($conn);
     if (mysqli_stmt_prepare($stmt, $sql)) {
-        mysqli_stmt_bind_param($stmt, 'sssi', $username, $email, $password, $creditinfo, (('on' == $shopkeeper) ? 1 : 0));
+        $shopk = ('on' == $shopkeeper) ? 1 : 0;
+        mysqli_stmt_bind_param($stmt, 'sssi', $username, $email, $password, $creditinfo, $shopk);
         mysqli_stmt_execute($stmt);
         echo 'success';
     }//else {
