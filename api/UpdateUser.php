@@ -43,6 +43,7 @@ try {
                     $sql = 'INSERT discount_group SET orderid = ? AND uid = ?';
                     if (mysqli_stmt_prepare($stmt, $sql)) {
                         echo var_dump($row[0]);
+                        $orderid = $row[0];
                         mysqli_stmt_bind_param($stmt, 'ii', $orderid, $uid);
                         mysqli_stmt_execute($stmt);
                         echo 'group inserted<br>';
