@@ -26,7 +26,7 @@ try {
         mysqli_stmt_bind_param($stmt, 'sssi', $address, $name, $creditinfo, $uid);
         mysqli_stmt_execute($stmt);
 
-        printf('%d Row inserted.<br>', mysqli_stmt_affected_rows($stmt));
+        //printf('%d Row inserted.<br>', mysqli_stmt_affected_rows($stmt));
 
         $sql = 'INSERT product_order (uid, pid) VALUES(?, ?)';
         if (mysqli_stmt_prepare($stmt, $sql)) {
