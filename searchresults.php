@@ -92,6 +92,17 @@
                 <tbody>
                   <?php
                     //get all items in an array
+                    include './includes/db.inc.php';
+                    $sql = 'SELECT * FROM product WHERE 1';
+
+                    $stmt = mysqli_stmt_init($conn);
+                    if (mysqli_stmt_prepare($stmt, $sql)) {
+                        mysqli_stmt_execute($stmt);
+                        $result = mysqli_stmt_get_result($stmt);
+                        while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+                            echo var_dump($row).'<br>';
+                        }
+                    }
                     //turn the items into the format of elements
                     //the pip
                     //then the product name
