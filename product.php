@@ -60,7 +60,11 @@
             <input type="button" value="Search"/>
           </div>
         </li>
-        <li class="mob">//Name//</i></li>
+        <li class="mob"><?php
+            if (!empty($_COOKIE['username'])) {
+                echo $_COOKIE['username'];
+            }
+          ?></i></li>
       </ul>
     </div>
   <!-- End NavBar -->
@@ -76,11 +80,21 @@
 
             </div>
             <div class="one-half column">
-              <h4 class="product heading"> //Product Title// </h4>
+              <h4 class="product heading">
+                <?php
+                  //get product title
+                ?> </h4>
               <p class="product-description">
+                <?php
+                  //get product description
+                  //get product price
+                ?>
                 //This product is a product. It has a desicrption!//
               </p>
-              <input type="button" name="" class="button-primary u-half-width" onclick="window.location.href = 'CCinfo.php';" value="Buy This">
+              <input type="button" name="" class="button-primary u-half-width" 
+              <?php
+                //checked if they are login and if so then discplay cc information.
+              ?>onclick="window.location.href = 'CCinfo.php';" value="Buy This">
           </div>
         </div>
       </div>
