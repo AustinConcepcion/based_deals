@@ -79,7 +79,7 @@
           <ul>
             <li> Pedro LastName </li>
             <li> Enelson LastName </li>
-            <li> Justtin LastName </li>
+            <li> Justtin Cortes </li>
             <li> Austin Concepcion </li>
           </ul>
         </div>
