@@ -61,7 +61,9 @@
           </div>
         </li>
         <li class="mob">
+			
 			<?php
+            echo 'User ';
             if (!empty($_COOKIE['username'])) {
                 echo $_COOKIE['username'];
             }
