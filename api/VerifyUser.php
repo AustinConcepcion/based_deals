@@ -34,6 +34,7 @@ try {
         $dpassword = '';
         $uid = 0;
         while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+            echo var_dump($row);
             $dpassword = $row['password'];
             $uid = $row['uid'];
         }
