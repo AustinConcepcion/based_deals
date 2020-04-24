@@ -105,6 +105,7 @@
 				<input type="submit" name="" value="Submit" id="addSave" class="button-primary">
 				<button id="addCancel" class="button-primary" type="add" onclick="javascript:history.back()">Cancel</button>
 			</div>
+		</form>
 		</div>
 	</body>
 </html>
