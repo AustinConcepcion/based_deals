@@ -30,7 +30,7 @@ create table product (
 );
 
 create table product_order (
-    discount float(2,1) not null,
+    discount float(2,1) not null default 0.0,
     orderId int(8) not null auto_increment,
     uid int(8) not null,
     pid int(8) not null,
