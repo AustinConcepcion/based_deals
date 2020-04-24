@@ -51,7 +51,7 @@ try {
             } else {
                 $time = time() + 2 * 3600;
             }
-            setcookie('userid', ${$uid}, $time);
+            setcookie('userid', $uid, $time);
         }
         // expire in 1 hour
     } else {
@@ -61,11 +61,11 @@ try {
     $error = $e->getMessage();
 } finally {
     echo '{"error":'.$error.'}';
-    //if ('none' != $error) {
-    //    header('Location: ../login.html?error='.$error);
-    //    exit;
-    //}
-//
-    //header('Location: ../searchresults.html');
-    //exit;
+    if ('none' != $error) {
+        header('Location: ../login.html?error='.$error);
+        exit;
+    }
+
+    header('Location: ../searchresults.html');
+    exit;
 }
