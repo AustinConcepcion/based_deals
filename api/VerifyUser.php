@@ -36,6 +36,7 @@ try {
             $dpassword = $row['password'];
             $uid = $row['uid'];
         }
+        echo "dpassword:{$dpassword} <br> uid:{$uid} <br>";
         if (!password_verify($password, $dpassword)) {
             throw new Exception('invalid_username_or_password');
         }
