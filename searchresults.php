@@ -92,7 +92,7 @@
                 <tbody>
                   <?php
                     //get all items in an array
-                    include './includes/db.inc.php';
+                    include './api/includes/db.inc.php';
                     $sql = 'SELECT * FROM product WHERE 1';
 
                     $stmt = mysqli_stmt_init($conn);
