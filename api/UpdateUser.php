@@ -41,7 +41,7 @@ try {
                 echo 'get orderid<br>';
                 $result = mysqli_stmt_get_result($stmt);
                 while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
-                    $sql = 'INSERT discount_group SET orderid = ? AND uid = ?';
+                    $sql = 'INSERT discount_group (orderid , uid) VALUES(?, ?)';
                     if (mysqli_stmt_prepare($stmt, $sql)) {
                         echo var_dump($row[0]);
                         $orderid = $row[0];
