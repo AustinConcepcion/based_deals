@@ -7,8 +7,9 @@
 .wrap {
   border: 3px solid #000000;
   border-radius: 1rem;
-  padding: 1rem;
-  margin: 1rem;
+  padding-top: 1rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
 }
 
 /* Sections
