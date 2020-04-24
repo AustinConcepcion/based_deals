@@ -116,7 +116,6 @@
                 <?php
                   echo $description.'-'.$price;
                 ?>
-                //This product is a product. It has a desicrption!//
               </p>
               <input type="button" name="" class="button-primary u-half-width" 
               <?php
