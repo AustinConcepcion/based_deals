@@ -100,7 +100,7 @@
                         mysqli_stmt_execute($stmt);
                         $result = mysqli_stmt_get_result($stmt);
                         while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
-                            echo var_dump($row).'<br>';
+                            //echo var_dump($row).'<br>';
                             if (1 == $row[6]) {
                                 echo '<tr>';
                                 echo '<td>'.$row[7].'</td>';
