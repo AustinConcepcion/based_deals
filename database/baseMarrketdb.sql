@@ -25,6 +25,7 @@ create table product (
     productPic varchar(256),
     description varchar(512),
     category varchar(30),
+    isActive boolean not null default true,
     pid int(8) not null auto_increment,
     primary key (pid)
 );
@@ -44,7 +45,6 @@ create table discount_group (
     orderId int(8) not null,
     uid int(8) not null,
     isActive boolean not null default 1,
-    dateCreated timestamp,
     primary key (orderId, uid),
     foreign key (orderId) references product_order(orderId),
     foreign key (uid) references user_account(uid)
@@ -61,8 +61,6 @@ insert into product (productname, price, productPic, description, category) valu
 insert into product (productname, price, productPic, description, category) values("Bath & Body Works White Barn 3-Wick Candle in Mahogany Teakwood High Intensity", 33.79,
 "https://images-na.ssl-images-amazon.com/images/I/61cgxCeqCML._AC_SL1500_.jpg",
 "Smells good yummy but do not eat it facts", "houseware");
-
-insert into user_account (username, name, email, password) values ("test", "test", "test@test.com", "password");
 
 
 DELIMITER $$    

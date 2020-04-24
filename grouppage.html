@@ -86,18 +86,20 @@
                   <tbody>
                     <tr>
                       <td>Product Title</td>
-                      <td>26</td>
+                      <td>Number of group members<!--use sql calls on orderform.html--></td>
                     </tr>
                   </tbody>
                   <thead>
                       <tr>
-                          <th>Total</th>
+                          <th>Total Cost<!--use sql calls on orderform.html--></th>
                       </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td></td>
-                      <td>##</td>
+                      <form action="" method="post">
+                        <input id="input-groupId" name="groupId" type="text" placeholder="Group ID" class="u-nearfull-width" required>
+                        <input id="input-submit" type="submit" name="submitGroupId" class="button-primary u-nearfull-width" value="Join">
+                      </form>
                     </tr>
                   </tbody>
                 </table>
