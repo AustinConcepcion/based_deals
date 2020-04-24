@@ -25,6 +25,7 @@ try {
     if (mysqli_stmt_prepare($stmt, $sql)) {
         mysqli_stmt_bind_param($stmt, 's', $email);
         mysqli_stmt_execute($stmt);
+        printf('%d Row inserted.<br>', mysqli_stmt_num_rows($stmt));
         if (mysqli_stmt_num_rows($stmt) < 1) {
             throw new Exception('username_not_exist');
         }
@@ -55,11 +56,11 @@ try {
     $error = $e->getMessage();
 } finally {
     echo '{"error":'.$error.'}';
-    if ('none' != $error) {
-        header('Location: ../login.html?error='.$error);
-        exit;
-    }
-
-    header('Location: ../searchresults.html');
-    exit;
+    //if ('none' != $error) {
+    //    header('Location: ../login.html?error='.$error);
+    //    exit;
+    //}
+//
+    //header('Location: ../searchresults.html');
+    //exit;
 }
