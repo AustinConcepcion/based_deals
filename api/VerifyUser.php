@@ -42,7 +42,7 @@ try {
         //$result = mysqli_stmt_get_result($stmt);
         while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
             foreach ($row as $r) {
-                echo "{$r} ";
+                echo "Option {$r} ";
             }
             echo "\n";
         }
