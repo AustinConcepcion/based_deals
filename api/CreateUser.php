@@ -14,14 +14,11 @@ try {
     //echo "username:{$username} <br> email:{$email} <br> password:{$password} <br> shopkeeper:{$shopkeeper} <br>";
 
     //verify data
-    if (empty($username) || empty($email) || empty($password) || empty($shopkeeper)) {
+    if (empty($username) || empty($email) || empty($password)) {
         throw new Exception('Empty field.');
     }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         throw new Exception('Invalid email.');
-    }
-    if (!filter_var($shopkeeper, FILTER_VALIDATE_BOOLEAN)) {
-        throw new Exception('Invalid shop keeper');
     }
 //
     //// create sql query
