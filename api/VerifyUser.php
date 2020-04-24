@@ -62,11 +62,11 @@ try {
 } finally {
     echo '{"error":'.$error.'}';
     if ('none' != $error) {
-        header('Location: ../login.html?error='.$error);
+        header('Location: ../login.php?error='.$error);
         exit;
     }
 
     echo 'no error';
-    header('Location: ../searchresults.html');
+    header('Location: ../searchresults.php');
     exit;
 }
