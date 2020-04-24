@@ -11,7 +11,7 @@ try {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $shopkeeper = ('on' == $_POST['shopkeeper']) ? 1 : 0;
 
-    //echo "username:{$username} <br> email:{$email} <br> password:{$password} <br> shopkeeper:{$shopkeeper} <br>";
+    echo "username:{$username} <br> email:{$email} <br> password:{$password} <br> shopkeeper:{$shopkeeper} <br>";
 
     //verify data
     if (empty($username) || empty($email) || empty($password)) {
@@ -27,8 +27,8 @@ try {
     if (mysqli_stmt_prepare($stmt, $sql)) {
         mysqli_stmt_bind_param($stmt, 'sssi', $username, $email, $password, $shopkeeper);
         mysqli_stmt_execute($stmt);
-    //printf('%d Row inserted.<br>', mysqli_stmt_affected_rows($stmt));
-        //echo 'success';
+        printf('%d Row inserted.<br>', mysqli_stmt_affected_rows($stmt));
+    //echo 'success';
     } else {
         throw new Exception('MySQL error.');
     }
