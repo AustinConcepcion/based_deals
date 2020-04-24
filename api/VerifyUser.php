@@ -66,6 +66,7 @@ try {
         exit;
     }
 
+    echo 'no error';
     header('Location: ../searchresults.html');
     exit;
 }
