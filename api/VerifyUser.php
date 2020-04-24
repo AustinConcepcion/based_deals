@@ -25,7 +25,7 @@ try {
     if (mysqli_stmt_prepare($stmt, $sql)) {
         mysqli_stmt_bind_param($stmt, 's', $email);
         mysqli_stmt_execute($stmt);
-        if (mysqli_stmt_affected_rows($stmt) < 1) {
+        if (mysqli_stmt_num_rows($stmt) < 1) {
             throw new Exception('username_not_exist');
         }
         $result = mysqli_stmt_get_result($stmt);
