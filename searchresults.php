@@ -107,7 +107,7 @@
                             echo '<td>'.$row[3].'<td>';
                             echo '<td>'.$row[4].'<td>';
                             echo '<td>'.$row[1].'<td>';
-                            echo '</tr>'
+                            echo '</tr>';
                         }
                     }
                     //turn the items into the format of elements
