@@ -20,9 +20,6 @@ try {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         throw new Exception('Invalid email.');
     }
-    if (!preg_match('/^[a-zA-Z0-9]*$/', $username)) {
-        throw new Exception('Invalid username.');
-    }
     if (!filter_var($shopkeeper, FILTER_VALIDATE_BOOLEAN)) {
         throw new Exception('Invalid shop keeper');
     }
