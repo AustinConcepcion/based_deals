@@ -53,10 +53,7 @@
         <li class="mob"><a href="SMSpage.php">SMS</a></li>
 
         <li class="active">
-          <i class="fa fa-search" aria-hidden="true"></i>
-          <div class="search-box">
-            <input type="text" placeholder="Search . . ."/>
-            <input type="button" value="Search"/>
+          <a href="searchresults.php"><i class="fa fa-search" aria-hidden="true"></i></a>
           </div>
         </li>
         <li class="mob"><?php
