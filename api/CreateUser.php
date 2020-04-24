@@ -35,6 +35,7 @@ try {
 } catch (Exception $e) {
     $error = $e->getMessage();
 } finally {
+    echo '{"error":'.$error.'}';
     if ('none' != $error) {
         header('Location: ../register.html?error='.$error);
         exit;
