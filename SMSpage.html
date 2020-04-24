@@ -116,6 +116,19 @@
 				<button id="cancelDiscount" onclick="cancelPolicy()" style="float:left">Cancel</button>
 		</div>-->
 
+		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Inactive Items</u></center></h2>
+
+		<table align="center" id="itemOffTable" class="u-nearfull-width">
+			<thead>
+				<tr>
+					<th>Item Name</th>
+					<th width="50%">Description</th>
+					<th>Price</th>
+					<th>Category</th>
+				</tr>
+			</thead>
+		</table>
+		
 		<h3 class="hero-heading"><center><u>Active Items</u></center></h2>
 
 		<table align="center" id="itemOnTable" class="u-nearfull-width">
@@ -152,20 +165,7 @@
 				<td><button type="button" class="button-primary u-nearfull-width" onclick="editItem()">Edit</button></td>
 			</tr>
 		</table>
-
-		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Inactive Items</u></center></h2>
-
-		<table align="center" id="itemOffTable" class="u-nearfull-width">
-			<thead>
-				<tr>
-					<th>Item Name</th>
-					<th width="50%">Description</th>
-					<th>Price</th>
-					<th>Category</th>
-				</tr>
-			</thead>
-		</table>
-
+		
 		<h3 class="hero-heading" style="padding-top: 20px"><center><u>Past Orders</u></center></h2>
 
 		<table align="center" id="orderHisotry" class="u-nearfull-width">
@@ -184,12 +184,12 @@
 
 			</thead>
 		</table>
-
+		
 		<div align="center">
 			<input type="text" id="orderHistory" placeholder="Find expired order to print" style="width: 25%">
 			<button type="button" class="button-primary" onclick="window.print();return false;">Print Order</button>
 		</div>
-
+		
 		<script>
 			var onCount = 4; //counts rows in the active items table
 			var offCount = 1; //counts rows in the inactive items table
@@ -197,11 +197,11 @@
 			var editRow = onCount;
 			var editNam, editDes, editPric, editCate;
 
-
+			
 			function addOrder(){
-
+			
 			}
-
+			
 			function searchFunc(){
 				var searchVal = document.getElementById("Search").value;
 				var table = document.getElementById("itemOnTable");
