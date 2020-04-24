@@ -6,10 +6,11 @@ $error = 'none';
 
 try {
     // get json data
-    $username = htmlspecialchars($_POST['name'], ENT_QUOTES);
-    $email = htmlspecialchars($_POST['email'], ENT_QUOTES);
-    $password = password_hash(htmlspecialchars($_POST['password'], ENT_QUOTES), PASSWORD_DEFAULT);
-    $shopkeeper = ('on' == $_POST['shopkeeper']) ? 1 : 0;
+    echo var_dump($_POST).'<br>';
+    //$username = htmlspecialchars($_POST['name'], ENT_QUOTES);
+    //$email = htmlspecialchars($_POST['email'], ENT_QUOTES);
+    //$password = password_hash(htmlspecialchars($_POST['password'], ENT_QUOTES), PASSWORD_DEFAULT);
+    //$shopkeeper = ('on' == $_POST['shopkeeper']) ? 1 : 0;
 //
     //// create sql query
     $sql = 'UPDATE user_account SET address = ?, name = ?, creditinfo = ? WHERE uid = ?';
