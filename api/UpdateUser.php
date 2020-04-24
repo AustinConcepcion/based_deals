@@ -65,6 +65,6 @@ try {
         exit;
     }
 
-    header('Location: ../grouppage.php?orderid='.$orderid.'&pid='.$pid);
+    header('Location: ../grouppage.php?orderid='.$orderid.'&pid='.$_GET['pid']);
     exit;
 }
