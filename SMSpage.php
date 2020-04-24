@@ -48,7 +48,7 @@
 
     <div class="nav-bar">
       <ul>
-        <li><a href="landing.html">based altar</a></li>
+        <li><a href="landing.php">based altar</a></li>
         <li class="mob"><a href="searchresults.php">products</a></li>
         <li class="mob"><a href="grouppage.php">groups</a></li>
         <li class="mob"><a href="login.php">login</a></li>
