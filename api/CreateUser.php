@@ -34,7 +34,7 @@ include './includes/db.inc.php';
         $shopk = ('on' == $shopkeeper) ? 1 : 0;
         mysqli_stmt_bind_param($stmt, 'sssi', $username, $email, $password, $shopk);
         mysqli_stmt_execute($stmt);
-        printf("%d Row inserted.\n", mysqli_stmt_affected_rows($stmt));
+        printf('%d Row inserted.<br>', mysqli_stmt_affected_rows($stmt));
         echo 'success';
     }//else {
     //    throw new Exception('MySQL error.');
