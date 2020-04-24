@@ -60,7 +60,11 @@
             <input type="button" value="Search"/>
           </div>
         </li>
-        <li class="mob">//Name//</i></li>
+        <li class="mob"><?php
+            if (!empty($_COOKIE['username'])) {
+                echo $_COOKIE['username'];
+            }
+          ?></i></li>
       </ul>
     </div>
   <!-- End NavBar -->
@@ -77,8 +81,8 @@
         </div>
         <div class="one-half column u-full-width">
           <ul>
-            <li> Pedro LastName </li>
-            <li> Enelson LastName </li>
+            <li> Pedro Bautista </li>
+            <li> Enelson Castro </li>
             <li> Justtin Cortes </li>
             <li> Austin Concepcion </li>
           </ul>
@@ -126,7 +130,7 @@
       </div>
       <div class="row">
         <div class="one-half column category">
-          <img class="u-max-full-width" src="images/justtin.jpg">
+          <img class="u-max-full-width" src="images/Justtin.jpg">
           <h4> Justtin </h4>
         </div>
         <div class="one-half column category">

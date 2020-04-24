@@ -59,7 +59,13 @@
             <input type="button" value="Search"/>
           </div>
         </li>
-        <li class="mob">//Name//</i></li>
+        
+        <li class="mob">
+        <?php
+            if (!empty($_COOKIE['username'])) {
+                echo $_COOKIE['username'];
+            }
+          ?></i></li>
       </ul>
     </div>
   <!-- End NavBar -->
@@ -81,6 +87,17 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php
+                    //get all items in an array
+                    //turn the items into the format of elements
+                    //the pip
+                    //then the product name
+                    //then the product link
+                    //then the product description
+                    //then the product category
+                    //then the product price
+                    //make sure the product link is uses something like product.php?pid=45823448
+                  ?>
                   <tr>
                     <td>45823448</td>
                     <td><a href="product.php">Yankee Candle Large Jar Candle Midsummer's Night</a></td>

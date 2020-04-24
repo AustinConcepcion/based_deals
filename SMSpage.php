@@ -46,12 +46,11 @@
  		});
     </script>
 
-    <div class="nav-bar">
+<div class="nav-bar">
       <ul>
         <li><a href="landing.php">based altar</a></li>
         <li class="mob"><a href="searchresults.php">products</a></li>
         <li class="mob"><a href="grouppage.php">groups</a></li>
-        <li class="mob"><a href="login.php">login</a></li>
         <li class="mob"><a href="SMSpage.php">SMS</a></li>
 
         <li class="active">
@@ -61,7 +60,13 @@
             <input type="button" value="Search"/>
           </div>
         </li>
-        <!--<li class="mob"><a href="faq.html"><i class="fa fa-question"></i></a></li>-->
+        
+        <li class="mob">
+        <?php
+            if (!empty($_COOKIE['username'])) {
+                echo $_COOKIE['username'];
+            }
+          ?></i></li>
       </ul>
     </div>
   <!-- End NavBar -->

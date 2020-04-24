@@ -59,7 +59,11 @@
             <input type="button" value="Search"/>
           </div>
         </li>
-        <li class="mob">//Name//</i></li>
+        <li class="mob"><?php
+            if (!empty($_COOKIE['username'])) {
+                echo $_COOKIE['username'];
+            }
+          ?></i></li>
       </ul>
     </div>
   <!-- End NavBar -->
