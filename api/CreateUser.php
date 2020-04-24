@@ -6,9 +6,9 @@ $error = 'none';
 
 try {
     // get json data
-    $username = $_POST['name'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $username = htmlspecialchars($_POST['name'], ENT_QUOTES);
+    $email = htmlspecialchars($_POST['email'], ENT_QUOTES);
+    $password = password_hash(htmlspecialchars($_POST['password'], ENT_QUOTES), PASSWORD_DEFAULT);
     $shopkeeper = ('on' == $_POST['shopkeeper']) ? 1 : 0;
 
     echo "username:{$username} <br> email:{$email} <br> password:{$password} <br> shopkeeper:{$shopkeeper} <br>";

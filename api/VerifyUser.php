@@ -1,50 +1,65 @@
 <?php
 
 include './includes/db.inc.php';
-//$error = 'none';
-//$jsonres = '';
+$error = 'none';
 
-//try {
+try {
     // get json data
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = htmlspecialchars($_POST['email'], ENT_QUOTES);
+    $password = htmlspecialchars($_POST['password'], ENT_QUOTES);
+    $remember = htmlspecialchars($_POST['remember'], ENT_QUOTES);
 
     echo "email:{$email} <br> password:{$password} <br>";
 
     //verify data
-    //if (empty($pid)) {
-    //    throw new Exception('Empty field.');
-    //}
-    //if (!filter_var($pid, FILTER_VALIDATE_INT)) {
-    //    throw new Exception('Invalid product id.');
-    //}
+    if (empty($email) || empty($password)) {
+        throw new Exception('empty_field');
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        throw new Exception('invalid_email');
+    }
 
     // create sql querie
-    //$sql = 'SELECT * FROM user_account WHERE email = ?';
-    //$stmt = mysqli_stmt_init($conn);
-    //if (mysqli_stmt_prepare($stmt, $sql)) {
-    //    mysqli_stmt_bind_param($stmt, 's', $email);
-    //    mysqli_stmt_execute($stmt);
-    //    mysqli_stmt_store_result($stmt);
-    //    $resultCheck = mysqli_stmt_num_rows($stmt);
-    //    if ($resultCheck <= 0) {
-    //        throw new Exception('Product not in stock.');
-    //    }
-    //
-    //    $result = mysqli_stmt_get_result($stmt);
-    //    while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
-    //        $jsonres = ', '.
-    //                    '"productname": "'.htmlspecialchars($row['productname'], ENT_QUOTES).'", '.
-    //                    '"price": '.$row['price'].', '.
-    //                    '"productPic": "'.htmlspecialchars($row['productPic'], ENT_QUOTES).'", '.
-    //                    '"description": "'.htmlspecialchars($row['description'], ENT_QUOTES).'", '.
-    //                    '"category": "'.htmlspecialchars($row['category'], ENT_QUOTES).'" ';
-    //    }
-    //} else {
-    //    throw new Exception('MySQL error.');
-    //}
-//} catch (Exception $e) {
-//    $error = $e->getMessage();
-//} finally {
-//    echo '{ "error": "'.$error.'"'.$jsonres.'}';
-//}
+    $sql = 'SELECT password, uid FROM user_account WHERE email = ?';
+    $stmt = mysqli_stmt_init($conn);
+    if (mysqli_stmt_prepare($stmt, $sql)) {
+        mysqli_stmt_bind_param($stmt, 's', $email);
+        mysqli_stmt_execute($stmt);
+        if (mysqli_stmt_affected_rows($stmt) < 1) {
+            throw new Exception('username_not_exist');
+        }
+        $result = mysqli_stmt_get_result($stmt);
+        $dpassword = '';
+        $uid = 0;
+        while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+            $dpassword = $row['password'];
+            $uid = $row['uid'];
+        }
+        if (!password_verify($password, $dpassword)) {
+            throw new Exception('invalid_username_or_password');
+        }
+
+        if (0 != $uid) {
+            if ('on' == $remember) {
+                $time = time() + 7 * 24 * 3600;
+            } else {
+                $time = time() + 2 * 3600;
+            }
+            setcookie('userid', ${$uid}, $time);
+        }
+        // expire in 1 hour
+    } else {
+        throw new Exception('mysql_error');
+    }
+} catch (Exception $e) {
+    $error = $e->getMessage();
+} finally {
+    echo '{"error":'.$error.'}';
+    if ('none' != $error) {
+        header('Location: ../login.html?error='.$error);
+        exit;
+    }
+
+    header('Location: ../searchresults.html');
+    exit;
+}
