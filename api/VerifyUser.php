@@ -26,7 +26,7 @@ try {
         mysqli_stmt_bind_param($stmt, 's', $email);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_store_result($stmt);
-        printf('%d Row selected.<br>', mysqli_stmt_num_rows($stmt));
+        printf('%d Row select.<br>', mysqli_stmt_num_rows($stmt));
         if (mysqli_stmt_num_rows($stmt) < 1) {
             throw new Exception('username_not_exist');
         }
