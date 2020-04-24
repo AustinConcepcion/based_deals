@@ -25,11 +25,11 @@ try {
     if (mysqli_stmt_prepare($stmt, $sql)) {
         mysqli_stmt_bind_param($stmt, 's', $email);
         mysqli_stmt_execute($stmt);
-        printf('%d Row inserted.<br>', mysqli_stmt_num_rows($stmt));
-        if (mysqli_stmt_num_rows($stmt) < 1) {
-            throw new Exception('username_not_exist');
-        }
+        //if (mysqli_stmt_num_rows($stmt) < 1) {
+        //    throw new Exception('username_not_exist');
+        //}
         $result = mysqli_stmt_get_result($stmt);
+        printf('%d Row inserted.<br>', mysqli_stmt_num_rows($result));
         $dpassword = '';
         $uid = 0;
         while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
