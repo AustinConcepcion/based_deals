@@ -21,31 +21,28 @@ try {
 //
     //// create sql query
     $sql = 'UPDATE user_account SET address = ?, name = ?, creditinfo = ? WHERE uid = ?';
-    $stmt1 = mysqli_stmt_init($conn);
-    if (mysqli_stmt_prepare($stmt1, $sql)) {
-        mysqli_stmt_bind_param($stmt1, 'sssi', $address, $name, $creditinfo, $uid);
-        mysqli_stmt_execute($stmt1);
+    $stmt = mysqli_stmt_init($conn);
+    if (mysqli_stmt_prepare($stmt, $sql)) {
+        mysqli_stmt_bind_param($stmt, 'sssi', $address, $name, $creditinfo, $uid);
+        mysqli_stmt_execute($stmt);
 
-        printf('%d Row inserted.<br>', mysqli_stmt_affected_rows($stmt1));
+        printf('%d Row inserted.<br>', mysqli_stmt_affected_rows($stmt));
 
         $sql = 'INSERT product_order (uid, pid) VALUES(?, ?)';
-        $stmt2 = mysqli_stmt_init($conn);
-        if (mysqli_stmt_prepare($stmt2, $sql)) {
-            mysqli_stmt_bind_param($stmt2, 'ii', $uid, $pid);
-            mysqli_stmt_execute($stmt2);
+        if (mysqli_stmt_prepare($stmt, $sql)) {
+            mysqli_stmt_bind_param($stmt, 'ii', $uid, $pid);
+            mysqli_stmt_execute($stmt);
 
             $sql = 'SELECT LAST_INSERT_ID(orderid) from product_order';
-            $stmt3 = mysqli_stmt_init($conn);
-            if (mysqli_stmt_prepare($stmt3, $sql)) {
-                mysqli_stmt_execute($stmt3);
-                $result = mysqli_stmt_get_result($stmt3);
+            if (mysqli_stmt_prepare($stmt, $sql)) {
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
                 while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
                     $sql = 'INSERT discount_group SET orderid = ? AND uid = ?';
-                    $stmt4 = mysqli_stmt_init($conn);
-                    if (mysqli_stmt_prepare($stmt4, $sql)) {
+                    if (mysqli_stmt_prepare($stmt, $sql)) {
                         $orderid = $row[0];
-                        mysqli_stmt_bind_param($stmt4, 'ii', $orderid, $uid);
-                        mysqli_stmt_execute($stmt4);
+                        mysqli_stmt_bind_param($stmt, 'ii', $orderid, $uid);
+                        mysqli_stmt_execute($stmt);
                     }
                 }
             }
