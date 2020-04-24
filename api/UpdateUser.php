@@ -66,6 +66,6 @@ try {
         exit;
     }
     echo 'Location: ../grouppage.php?orderid='.$orderid.'&pid='.$pid;
-    //header('Location: ../grouppage.php?orderid='.$orderid.'&pid='.$pid);
-    //exit;
+    header('Location: ../grouppage.php?orderid='.$orderid.'&pid='.$pid);
+    exit;
 }
