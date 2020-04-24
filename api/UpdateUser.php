@@ -65,7 +65,7 @@ try {
         header('Location: ../CCinfo.php.php?pid='.$pid.'&error='.$error);
         exit;
     }
-
-    header('Location: ../grouppage.php?orderid='.$orderid.'&pid='.$pid);
-    exit;
+    echo 'Location: ../grouppage.php?orderid='.$orderid.'&pid='.$pid;
+    //header('Location: ../grouppage.php?orderid='.$orderid.'&pid='.$pid);
+    //exit;
 }
