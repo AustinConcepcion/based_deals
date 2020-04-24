@@ -49,10 +49,10 @@
     <div class="nav-bar">
       <ul>
         <li><a href="landing.html">based altar</a></li>
-        <li class="mob"><a href="searchresults.html">products</a></li>
-        <li class="mob"><a href="grouppage.html">groups</a></li>
-        <li class="mob"><a href="login.html">login</a></li>
-        <li class="mob"><a href="SMSpage.html">SMS</a></li>
+        <li class="mob"><a href="searchresults.php">products</a></li>
+        <li class="mob"><a href="grouppage.php">groups</a></li>
+        <li class="mob"><a href="login.php">login</a></li>
+        <li class="mob"><a href="SMSpage.php">SMS</a></li>
 
         <li class="active">
           <i class="fa fa-search" aria-hidden="true"></i>
@@ -202,7 +202,7 @@
 		</table>
 
 		<!--------------------------------------PRINT ORDER------------------------------------------->
-		
+
 		<div  align="center">
 			<input type="text" id="Search"  placeholder="Enter Group Discount Code" name="Search" style=" border: 1px solid gray;">
 			<button type="submit" class="button-primary" onclick="" style="border: 1px solid grey;">
@@ -211,7 +211,7 @@
 		</div>
 
 
-		
+
 <!---------------------------------------------------Script-------------------------------------------------------------------------->
 		<script>
 			var onCount = 4; //counts rows in the active items table
