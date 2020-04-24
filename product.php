@@ -117,13 +117,13 @@
                   echo $description.'-$'.$price;
                 ?>
               </p>
-              <input type="button" name="" class="button-primary u-half-width" 
+              <input type="button" name="" class="button-primary u-half-width"
               onclick="
               <?php
                 if (empty($_COOKIE['uid'])) {
                     echo 'window.location.href = \'login.php\';';
                 } else {
-                    echo 'window.location.href = \'CCinfo.php\';';
+                    echo 'window.location.href = \'CCinfo.php?pid='.$pid.'\';';
                 }
 
               ?>" value="Buy This">
