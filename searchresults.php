@@ -103,7 +103,7 @@
                             //echo var_dump($row).'<br>';
                             echo '<tr>';
                             echo '<td>'.$row[5].'</td>';
-                            echo '<td>'.$row[0].'</td>';
+                            echo '<td><a href="product.php?'.$row[5].'">'.$row[0].'</a></td>';
                             echo '<td>'.$row[3].'</td>';
                             echo '<td>'.$row[4].'</td>';
                             echo '<td>'.$row[1].'</td>';
@@ -121,7 +121,7 @@
                   ?>
                   <tr>
                     <td>45823448</td>
-                    <td><a href="product.php">Yankee Candle Large Jar Candle Midsummer's Night</a></td>
+                    <td><a href="product.php">Yankee Candle Large Jar Candle Midsummer's Night<a href="product.php"></td>
                     <td><a href="https://www.amazon.com/Yankee-Candle-Large-Midsummers-Night/dp/B000ORX6WI?ref_=s9_apbd_otopr_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=da763f1a-9ede-52e6-96df-4cedd103038c&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391">https://www.amazon.com/Yankee-Candle-Large-Midsummers-Night/dp/B000ORX6WI?ref_=s9_apbd_otopr_hd_bw_bFfU7&pf_rd_r=8Y2EKDBWDJWXW6AYYYG2&pf_rd_p=da763f1a-9ede-52e6-96df-4cedd103038c&pf_rd_s=merchandised-search-11&pf_rd_t=BROWSE&pf_rd_i=3734391</a></td>
                     <td>Houseware</td>
                     <td>$20.99</td>
