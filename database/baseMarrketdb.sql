@@ -17,14 +17,13 @@ create table user_account (
     primary key (uid)
 );
 
-
-
 create table product (
     productname varchar(256),
     price float(7,2),
     productPic varchar(256),
     description varchar(512),
     category varchar(30),
+    url varchar(512),
     isActive boolean not null default true,
     pid int(8) not null auto_increment,
     primary key (pid)
